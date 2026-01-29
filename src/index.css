@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
-*{
-   box-sizing: border-box;          
+
+.Close{
+   right: -320px;
+}
+.Open{
+   right: 0;
 }
