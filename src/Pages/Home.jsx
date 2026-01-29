@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import TopBar from '../components/TopBar'
 import MobieMenu from '../components/MobieMenu'
+import DeskTopMenu from '../components/DeskTopMenu'
 
 export default function Home() {
 
@@ -13,12 +14,11 @@ export default function Home() {
    }
 
    return (
-      <>
-
+      <div className='w-full container px-4'>
          <TopBar setIsOpen={setIsOpen} />
-         <MobieMenu isOpen={isOpen} />
-         <div className={`absolute top-0 right-0 left-0 bottom-0 ${isOpen && "bg-black/65"}`} onClick={CloseHandler}></div>
-      </>
+         <MobieMenu isOpen={isOpen} onClose={CloseHandler} />
+         <DeskTopMenu/>
+      </div>
    )
 }
 
