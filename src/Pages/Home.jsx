@@ -7,7 +7,7 @@ export default function Home() {
    const [isOpen, setIsOpen] = useState(false)
 
    const CloseHandler = () => {
-      if(isOpen){
+      if (isOpen) {
          setIsOpen(false)
       }
    }
@@ -17,7 +17,7 @@ export default function Home() {
 
          <TopBar setIsOpen={setIsOpen} />
          <MobieMenu isOpen={isOpen} />
-         <div className={`absolute top-0 right-0 left-0 bottom-0 ${isOpen && "bg-black/30"}`} onClick={CloseHandler}></div>
+         <div className={`absolute top-0 right-0 left-0 bottom-0 ${isOpen && "bg-black/65"}`} onClick={CloseHandler}></div>
       </>
    )
 }
