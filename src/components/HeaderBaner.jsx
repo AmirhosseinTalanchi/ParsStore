@@ -2,10 +2,10 @@ import React from 'react'
 
 export default function HeaderBaner() {
   return (
-    <div className='flex justify-between mt-12'>
+    <div className='flex justify-between mt-12 gap-4'>
       {/* watch */}
       <div className='relative -z-1'>
-        <img src="public/Photo/banner-watch.avif" alt="watch" className='rounded-xl' />
+        <img src="public/Photo/banner-watch.avif" alt="watch" className='rounded-xl w-full' />
         <div className='absolute top-6 md:top-16 lg:top-10  right-21.25 flex flex-col'>
           <h2 className='text-2xl md:text-3xl lg:text-7xl w-10 lg:w-56  md:mb-6'>ساعت هوشمند</h2>
           <span className=' hidden md:block text-[14px] md:text-[16px] text-[#0000006E] '>سامسونگ Galaxy Watch8</span>
@@ -20,8 +20,8 @@ export default function HeaderBaner() {
         </div>
       </div>
       {/* headphone */}
-      <div className='hidden lg:block relative'>
-        <img src="public/Photo/banner-headphon.avif" alt="headphon" className='rounded-xl' />
+      <div className='hidden lg:block relative '>
+        <img src="public/Photo/banner-headphon.avif" alt="headphon" className='rounded-xl w-full h-full' />
         <h2 className='text-2xl w-24 absolute top-10 right-7 text-white'>هدفون و هندزفری</h2>
         <a href="#" className='absolute top-28 right-7 flex items-end gap-1'>
           <span>خرید</span>
