@@ -6,7 +6,7 @@ export default function MobieMenu({isOpen,onClose}) {
    return (
       <>
       {/* mobile menu */}
-      <div className={`w-80 h-full z-50 py-4 absolute top-0 bg-white flex flex-col transition-all duration-300 lg:hidden ${isOpen ? "Open": "Close"}`} >
+      <div className={` ${isOpen ? "Open": "Close"} fixed w-80 h-full z-50 py-4 top-0 bg-white flex flex-col transition-all duration-300 md:hidden`} >
          <div className='w-full border-b border-zinc-300 pb-4'>
             <input type="text" placeholder='جستجو در سایت ...' className='w-72 h-11 mx-4 border border-zinc-300 rounded-xl p-3 ' />
          </div>

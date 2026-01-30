@@ -14,10 +14,8 @@
    right: -320px;
 }
 .Open{
-   right: 0;
+  right: 0;
 }
-
-
 
 @media (min-width: 576px){
    .container{

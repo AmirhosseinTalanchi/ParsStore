@@ -7,7 +7,7 @@ function App() {
 
   return (
 
-    <div  dir='rtl' className='flex justify-center box-border '>
+    <div  dir='rtl' className='flex justify-center box-border overflow-hidden  '>
       <Home/>
     </div>
   )

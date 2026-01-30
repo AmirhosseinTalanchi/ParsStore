@@ -4,9 +4,9 @@ export default function HeaderBaner() {
   return (
     <div className='flex justify-between mt-12'>
       {/* watch */}
-      <div className='relative'>
+      <div className='relative -z-1'>
         <img src="public/Photo/banner-watch.avif" alt="watch" className='rounded-xl' />
-        <div className='absolute top-6 md:top-16 lg:top-10 right-21.25 flex flex-col'>
+        <div className='absolute top-6 md:top-16 lg:top-10  right-21.25 flex flex-col'>
           <h2 className='text-2xl md:text-3xl lg:text-7xl w-10 lg:w-56  md:mb-6'>ساعت هوشمند</h2>
           <span className=' hidden md:block text-[14px] md:text-[16px] text-[#0000006E] '>سامسونگ Galaxy Watch8</span>
           <span className=' text-[14px] text-[#0000006E] md:mt-8 mb-1 '>30% تخفیف ویژه</span>
@@ -34,3 +34,4 @@ export default function HeaderBaner() {
     </div>
   )
 }
+
