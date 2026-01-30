@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import TopBar from '../components/TopBar'
 import MobieMenu from '../components/MobieMenu'
 import DeskTopMenu from '../components/DeskTopMenu'
+import HeaderBaner from '../components/HeaderBaner'
 
 export default function Home() {
 
@@ -14,10 +15,11 @@ export default function Home() {
    }
 
    return (
-      <div className='w-full container px-4'>
+      <div className='w-full container font-iransans'>
          <TopBar setIsOpen={setIsOpen} />
          <MobieMenu isOpen={isOpen} onClose={CloseHandler} />
-         <DeskTopMenu/>
+         <DeskTopMenu />
+         <HeaderBaner />
       </div>
    )
 }
