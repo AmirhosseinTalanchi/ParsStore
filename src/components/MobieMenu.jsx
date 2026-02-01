@@ -24,7 +24,7 @@ export default function MobieMenu({isOpen,onClose}) {
       </div>
 
       {/* blur bg */}
-      <div className={`lg:hidden absolute top-0 right-0 left-0 bottom-0 ${isOpen && "bg-black/65"}`}onClick={onClose} ></div>
+      <div className={`hidden absolute z-40 top-0 right-0 left-0 bottom-0 ${isOpen && "inline bg-black/65"}`}onClick={onClose} ></div>
 
       </>
    )

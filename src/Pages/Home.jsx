@@ -20,7 +20,7 @@ export default function Home() {
 
    return (
      <>
-      <div className='w-full container font-iransans overflow-hidden'>
+      <div className='w-full container font-iransans overflow-hidden '>
 
          <TopBar setIsOpen={setIsOpen} />
          <MobieMenu isOpen={isOpen} onClose={CloseHandler} />
@@ -29,12 +29,12 @@ export default function Home() {
          
          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mb-20 mt-4 gap-4 '>
             {category.map((category)=>(
-               <Category {...category} />
+               <Category key={category.id} {...category} />
             ))}
          </div>
 
 
-      </div>
+      </div>   
      </>
      
    )

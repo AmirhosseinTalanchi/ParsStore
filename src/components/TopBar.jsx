@@ -9,7 +9,7 @@ import { FiMenu } from "react-icons/fi";
 export default function TopBar({setIsOpen}) {
   return (
     <>
-      <div className='container flex justify-between items-center  h-24 w-full relative border-b border-zinc-300'>
+      <div className=' container flex justify-between items-center  h-24 w-full relative border-b border-zinc-300'>
 
         {/* logo page */}
         <img src='public/Photo/logo.png' className='w-36 h-6'></img>
