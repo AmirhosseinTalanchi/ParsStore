@@ -20,26 +20,26 @@ export default function Home() {
    }
 
    return (
-     <>
-      <div className='w-full container font-iransans overflow-hidden '>
+      <>
+         <div className='w-full container font-iransans overflow-hidden '>
 
-         <TopBar setIsOpen={setIsOpen} />
-         <MobieMenu isOpen={isOpen} onClose={CloseHandler} />
-         <DeskTopMenu />
-         <HeaderBaner />
-         
-         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mb-[50px] mt-4 gap-4 '>
-            {category.map((category)=>(
-               <Category key={category.id} {...category} />
-            ))}
+            <TopBar setIsOpen={setIsOpen} />
+            <MobieMenu isOpen={isOpen} onClose={CloseHandler} />
+            <DeskTopMenu />
+            <HeaderBaner />
+
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mb-12.5 mt-4 gap-4 '>
+               {category.map((category) => (
+                  <Category key={category.id} {...category} />
+               ))}
+            </div>
+
+            <NewestProduct />
+
+
          </div>
+      </>
 
-         <NewestProduct/>
-
-
-      </div>   
-     </>
-     
    )
 }
 
