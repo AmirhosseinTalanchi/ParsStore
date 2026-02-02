@@ -5,6 +5,7 @@ import DeskTopMenu from '../components/DeskTopMenu'
 import HeaderBaner from '../components/HeaderBaner'
 import Category from '../components/Category.jsx'
 import Data from '../../Data.js'
+import NewestProduct from '../components/NewestProduct.jsx'
 
 
 export default function Home() {
@@ -27,11 +28,13 @@ export default function Home() {
          <DeskTopMenu />
          <HeaderBaner />
          
-         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mb-20 mt-4 gap-4 '>
+         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mb-[50px] mt-4 gap-4 '>
             {category.map((category)=>(
                <Category key={category.id} {...category} />
             ))}
          </div>
+
+         <NewestProduct/>
 
 
       </div>   
