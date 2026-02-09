@@ -4,14 +4,14 @@ import MobieMenu from '../components/MobieMenu'
 import DeskTopMenu from '../components/DeskTopMenu'
 import HeaderBaner from '../components/HeaderBaner'
 import Category from '../components/Category.jsx'
-import Data from '../../Data.js'
+import {categoryBanner} from '../../Data.js'
 import NewestProduct from '../components/NewestProduct.jsx'
 
 
 export default function Home() {
 
    const [isOpen, setIsOpen] = useState(false)
-   const [category, setCategory] = useState(Data)
+   const [category, setCategory] = useState(categoryBanner)
 
    const CloseHandler = () => {
       if (isOpen) {
