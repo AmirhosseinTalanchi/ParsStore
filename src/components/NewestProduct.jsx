@@ -26,7 +26,7 @@ export default function NewestProduct() {
    }, [userWantProduct])
 
    return (
-      <div className='mb-56'>
+      <div className='mb-14'>
 
          {/* top */}
          <div className='flex justify-between text-2xl mb-7 '>

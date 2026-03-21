@@ -4,7 +4,7 @@ export  const categoryBanner = [
    {id: 3 ,title : "کنسول بازی" , img : "/public/Photo/category-banner/game.avif" },
    {id: 4 ,title : "دوربین دیجیتال" , img : "/public/Photo/category-banner/camera.avif" },
 ]
-       
+
 export  const product = [
    {proId:1, category: "هدفون" ,title: "هدفون بی سیم سامسونگ Galaxy Buds 3 Pro اصل" , score : "4.0" , price: 10000000 ,img: "public/Photo/product-img/headphon/headphon-1.avif" }, 
    {proId:2, category: "هدفون" ,title: "هدفون جی بی ال مدل Tune 710BT اصل" , score : "5.0" , price: 1800000 ,img: "/public/Photo/product-img/headphon/headphon-2.avif" }, 
@@ -23,3 +23,9 @@ export  const product = [
    {proId:12, category: "مانیتور" ,title: "مانیتور 27 اینچ ایسوس ROG XG27ACS"  , price: 17500000 ,img: "/public/Photo/product-img/manitor/manitor-4.avif" }, 
 
 ]
+
+export const categoryBanner2 = [
+   {id: 1 ,title: "MicrosoftXBOX" ,caption: "سری ایکس" , discount: "5%", img: "/public/Photo/category-banner2/XBOX-Banner.avif"},
+   {id: 2 ,title: "SonyPlaystation" ,caption: "پلی استیشن 5" , discount: "5%", img: "/public/Photo/category-banner2/PlayStion-Banner.avif"}
+]
+
