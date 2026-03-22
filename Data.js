@@ -22,6 +22,17 @@ export  const product = [
    {proId:11, category: "مانیتور" ,title: "مانیتور گیمینگ ام اس آی MAG401QR سایز ۴۰ اینچ UWQHD IPS ۱۵۵ هرتز"  , price: 17500000, discount: 13 ,img: "/public/Photo/product-img/manitor/manitor-3.avif" }, 
    {proId:12, category: "مانیتور" ,title: "مانیتور 27 اینچ ایسوس ROG XG27ACS"  , price: 17500000 ,img: "/public/Photo/product-img/manitor/manitor-4.avif" }, 
 
+   {proId:13 ,category: "ساعت هوشمند" ,title: "ساعت هوشمند اولترا مدل S8 ultra سیم کارت خور" ,price: 3100000 ,highSale: true ,img: "/public/Photo/product-img/Watch/Watch1.avif" }, 
+
+   {proId:14 ,category: "تلوزیون" ,title: "تلویزیون سامسونگ تلویزیون هوشمند سونی براویا 4 KHDR 2025" ,price:25000000 ,highSale: true ,img: "/public/Photo/product-img/TV/TV1.avif" },
+
+   {proId:15 ,category: "کامپیوتر" ,title: "رم کامپیوتر جی اسکیل دو کاناله مدل Trident Z5 RGB فرکانس 6000 مگاهرتز DDR5 تایمینگ CL36 حافظه 64 گیگابایت", price: 24000000 ,highSale: true  ,img: "/public/Photo/product-img/PC/Ram1.avif" }, 
+   {proId:16 ,category: "کامپیوتر" ,title: "رم جی اسکیل مدل Trident Z5 Royal ظرفیت ۳۲ گیگابایت فرکانس ۷۲۰۰ مگاهرتز CL34" ,price:9500000 ,highSale: true ,discount:27 ,img: "/public/Photo/product-img/PC/Ram2.avif" }, 
+   {proId:17 ,category: "کامپیوتر" ,title: "خنک کننده پردازنده اوست مدل GT-AV903 ARGB" , price:1200000 ,highSale: true  ,discount:33  ,img: "/public/Photo/product-img/PC/Fan1.avif" }, 
+
+   {proId:18 ,category: "گوشی موبایل" ,title: "گوشی سامسونگ Galaxy Z Fold 7", score : "4.5"  , price:178000000 ,highSale: true ,discount: 19  ,img: "/public/Photo/product-img/Phone/Phone1.avif" }, 
+
+   {proId:19 ,category: "کنسول بازی" ,title: "کنسول بازی سونی PS5 Slim Digital + یک دسته اضافه" ,price:26500000, highSale: true ,discount:7  ,img: "/public/Photo/product-img/console/console1.avif" }, 
 ]
 
 export const categoryBanner2 = [

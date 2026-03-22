@@ -4,7 +4,7 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation"
 import { product } from '../../Data.js'
-import Pruduct from './Product.jsx';
+import Product from './Product.jsx';
 
 export default function NewestProduct() {
 
@@ -51,7 +51,7 @@ export default function NewestProduct() {
          >
             {userSelectProduct.map((pro) => (
                <SwiperSlide key={pro.proId} className=''>
-                <Pruduct {...pro} />
+                <Product {...pro} />
                </SwiperSlide>
             ))}
          </Swiper>
