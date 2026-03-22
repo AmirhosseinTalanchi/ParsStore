@@ -1,8 +1,10 @@
 export  const categoryBanner = [
-   {id: 1 ,title : "گوشی هوشمند" , img : "/public/Photo/category-banner/Phone.avif" },
-   {id: 2 ,title : "مانیتور طراحی" , img : "/public/Photo/category-banner/Design.avif" },
-   {id: 3 ,title : "کنسول بازی" , img : "/public/Photo/category-banner/game.avif" },
-   {id: 4 ,title : "دوربین دیجیتال" , img : "/public/Photo/category-banner/camera.avif" },
+   {id: 1 ,title : "گوشی هوشمند" , position:1 , img : "/public/Photo/category-banner/Phone.avif" },
+   {id: 2 ,title : "مانیتور طراحی" , position:1 , img : "/public/Photo/category-banner/Design.avif" },
+   {id: 3 ,title : "کنسول بازی" , position:1 , img : "/public/Photo/category-banner/game.avif" },
+   {id: 4 ,title : "دوربین دیجیتال" , position:1 , img : "/public/Photo/category-banner/camera.avif" },
+   {id: 5 ,title: "MicrosoftXBOX" ,caption: "سری ایکس" , discount: "5%", position:2 , img: "/public/Photo/category-banner2/XBOX-Banner.avif"},
+   {id: 6 ,title: "SonyPlaystation" ,caption: "پلی استیشن 5" , discount: "5%", position:2 , img: "/public/Photo/category-banner2/PlayStion-Banner.avif"}
 ]
 
 export  const product = [
@@ -35,8 +37,5 @@ export  const product = [
    {proId:19 ,category: "کنسول بازی" ,title: "کنسول بازی سونی PS5 Slim Digital + یک دسته اضافه" ,price:26500000, highSale: true ,discount:7  ,img: "/public/Photo/product-img/console/console1.avif" }, 
 ]
 
-export const categoryBanner2 = [
-   {id: 1 ,title: "MicrosoftXBOX" ,caption: "سری ایکس" , discount: "5%", img: "/public/Photo/category-banner2/XBOX-Banner.avif"},
-   {id: 2 ,title: "SonyPlaystation" ,caption: "پلی استیشن 5" , discount: "5%", img: "/public/Photo/category-banner2/PlayStion-Banner.avif"}
-]
+
 

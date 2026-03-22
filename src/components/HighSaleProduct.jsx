@@ -23,7 +23,7 @@ export default function HighSaleProduct() {
       <div>
          {/* top */}
          <div className='flex justify-between text-2xl mb-7 '>
-            <h2>جدیدترین محصولات</h2>
+            <h2>محصولات پرفروش​</h2>
          </div>
 
          {/* product */}
