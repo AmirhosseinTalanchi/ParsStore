@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Categort2({ id, title, caption, discount, img }) {
+export default function ConsoleBanner({ title, caption, discount, img }) {
    return (
       <div className='relative'>
          <img src={img} className='rounded-xl' />
@@ -19,3 +19,4 @@ export default function Categort2({ id, title, caption, discount, img }) {
       </div>
    )
 }
+// 

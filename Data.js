@@ -3,9 +3,14 @@ export  const categoryBanner = [
    {id: 2 ,title : "مانیتور طراحی" , position:1 , img : "/public/Photo/category-banner/Design.avif" },
    {id: 3 ,title : "کنسول بازی" , position:1 , img : "/public/Photo/category-banner/game.avif" },
    {id: 4 ,title : "دوربین دیجیتال" , position:1 , img : "/public/Photo/category-banner/camera.avif" },
-   {id: 5 ,title: "MicrosoftXBOX" ,caption: "سری ایکس" , discount: "5%", position:2 , img: "/public/Photo/category-banner2/XBOX-Banner.avif"},
-   {id: 6 ,title: "SonyPlaystation" ,caption: "پلی استیشن 5" , discount: "5%", position:2 , img: "/public/Photo/category-banner2/PlayStion-Banner.avif"}
+
+   {id: 5 ,title: "MicrosoftXBOX" ,caption: "سری ایکس" , discount: "5%", position:2 , img: "/public/Photo/category-banner/XBOX-Banner.avif"},
+   {id: 6 ,title: "SonyPlaystation" ,caption: "پلی استیشن 5" , discount: "5%", position:2 , img: "/public/Photo/category-banner/PlayStion-Banner.avif"},
+
+   {id: 7 ,title: "مانیتور گیمینگ" ,caption: "بهترین تجربه بازی با مانیتورهای گیمینگ سری ROG" , toptitle: "طراحی چشم نواز" , position:3 ,img: "/public/Photo/category-banner/manitor-Gaming.avif"},
+   {id: 8 ,title: "قطعات کامپیوتر" ,caption: "سیستم گیمینگ رویایی خودتو با تخفیف ویژه ببند" , toptitle: "سیستم رویایی" ,position:3 ,img: "/public/Photo/category-banner/PC-items.avif"}
 ]
+
 
 export  const product = [
    {proId:1, category: "هدفون" ,title: "هدفون بی سیم سامسونگ Galaxy Buds 3 Pro اصل" , score : "4.0" , price: 10000000 ,img: "public/Photo/product-img/headphon/headphon-1.avif" }, 
@@ -24,17 +29,25 @@ export  const product = [
    {proId:11, category: "مانیتور" ,title: "مانیتور گیمینگ ام اس آی MAG401QR سایز ۴۰ اینچ UWQHD IPS ۱۵۵ هرتز"  , price: 17500000, discount: 13 ,img: "/public/Photo/product-img/manitor/manitor-3.avif" }, 
    {proId:12, category: "مانیتور" ,title: "مانیتور 27 اینچ ایسوس ROG XG27ACS"  , price: 17500000 ,img: "/public/Photo/product-img/manitor/manitor-4.avif" }, 
 
-   {proId:13 ,category: "ساعت هوشمند" ,title: "ساعت هوشمند اولترا مدل S8 ultra سیم کارت خور" ,price: 3100000 ,highSale: true ,img: "/public/Photo/product-img/Watch/Watch1.avif" }, 
+   {proId:13 ,category: "ساعت هوشمند" ,title: "اپل واچ Ultra 3 مدل 49 میلی متری" ,price: 58000000 ,score: 4.0 ,img: "/public/Photo/product-img/Watch/Watch1.avif" }, 
+   {proId:14 ,category: "ساعت هوشمند" ,title: "ساعت هوشمند اولترا مدل S8 ultra سیم کارت خور" ,price: 3100000 ,highSale: true ,img: "/public/Photo/product-img/Watch/Watch2.avif" }, 
+   {proId:15 ,category: "ساعت هوشمند" ,title: "ساعت هوشمند دی تی نامبر وان مدل Ultra Mate با بدنه استیل و بند فلزی" ,price: 8000000 ,img: "/public/Photo/product-img/Watch/Watch2.avif" }, 
+   {proId:16 ,category: "ساعت هوشمند" ,title: "ساعت هوشمند سامسونگ Galaxy Watch8" ,price: 16000000 ,img: "/public/Photo/product-img/Watch/Watch3.avif" },
+   {proId:17 ,category: "ساعت هوشمند" ,title: "ساعت هوشمند سامسونگ Galaxy Watch8 سفید" ,price: 1650000, discount:15 ,img: "/public/Photo/product-img/Watch/Watch4.avif" }, 
+   {proId:18 ,category: "ساعت هوشمند" ,title: "ساعت هوشمند سامسونگ مدل Galaxy Watch7 L300 40mm" ,price: 12500000, discount:19 ,img: "/public/Photo/product-img/Watch/Watch5.avif" }, 
 
-   {proId:14 ,category: "تلوزیون" ,title: "تلویزیون سامسونگ تلویزیون هوشمند سونی براویا 4 KHDR 2025" ,price:25000000 ,highSale: true ,img: "/public/Photo/product-img/TV/TV1.avif" },
 
-   {proId:15 ,category: "کامپیوتر" ,title: "رم کامپیوتر جی اسکیل دو کاناله مدل Trident Z5 RGB فرکانس 6000 مگاهرتز DDR5 تایمینگ CL36 حافظه 64 گیگابایت", price: 24000000 ,highSale: true  ,img: "/public/Photo/product-img/PC/Ram1.avif" }, 
-   {proId:16 ,category: "کامپیوتر" ,title: "رم جی اسکیل مدل Trident Z5 Royal ظرفیت ۳۲ گیگابایت فرکانس ۷۲۰۰ مگاهرتز CL34" ,price:9500000 ,highSale: true ,discount:27 ,img: "/public/Photo/product-img/PC/Ram2.avif" }, 
-   {proId:17 ,category: "کامپیوتر" ,title: "خنک کننده پردازنده اوست مدل GT-AV903 ARGB" , price:1200000 ,highSale: true  ,discount:33  ,img: "/public/Photo/product-img/PC/Fan1.avif" }, 
 
-   {proId:18 ,category: "گوشی موبایل" ,title: "گوشی سامسونگ Galaxy Z Fold 7", score : "4.5"  , price:178000000 ,highSale: true ,discount: 19  ,img: "/public/Photo/product-img/Phone/Phone1.avif" }, 
 
-   {proId:19 ,category: "کنسول بازی" ,title: "کنسول بازی سونی PS5 Slim Digital + یک دسته اضافه" ,price:26500000, highSale: true ,discount:7  ,img: "/public/Photo/product-img/console/console1.avif" }, 
+   {proId:19 ,category: "تلوزیون" ,title: "تلویزیون سامسونگ تلویزیون هوشمند سونی براویا 4 KHDR 2025" ,price:25000000 ,highSale: true ,img: "/public/Photo/product-img/TV/TV1.avif" },
+
+   {proId:20 ,category: "کامپیوتر" ,title: "رم کامپیوتر جی اسکیل دو کاناله مدل Trident Z5 RGB فرکانس 6000 مگاهرتز DDR5 تایمینگ CL36 حافظه 64 گیگابایت", price: 24000000 ,highSale: true  ,img: "/public/Photo/product-img/PC/Ram1.avif" }, 
+   {proId:21 ,category: "کامپیوتر" ,title: "رم جی اسکیل مدل Trident Z5 Royal ظرفیت ۳۲ گیگابایت فرکانس ۷۲۰۰ مگاهرتز CL34" ,price:9500000 ,highSale: true ,discount:27 ,img: "/public/Photo/product-img/PC/Ram2.avif" }, 
+   {proId:22 ,category: "کامپیوتر" ,title: "خنک کننده پردازنده اوست مدل GT-AV903 ARGB" , price:1200000 ,highSale: true  ,discount:33  ,img: "/public/Photo/product-img/PC/Fan1.avif" }, 
+
+   {proId:23 ,category: "گوشی موبایل" ,title: "گوشی سامسونگ Galaxy Z Fold 7", score : "4.5"  , price:178000000 ,highSale: true ,discount: 19  ,img: "/public/Photo/product-img/Phone/Phone1.avif" }, 
+
+   {proId:24 ,category: "کنسول بازی" ,title: "کنسول بازی سونی PS5 Slim Digital + یک دسته اضافه" ,price:26500000, highSale: true ,discount:7  ,img: "/public/Photo/product-img/console/console1.avif" }, 
 ]
 
 
