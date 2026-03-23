@@ -34,6 +34,7 @@ export default function HighSaleProduct() {
             breakpoints={{
                768: { slidesPerView: 3 },
                1024: { slidesPerView: 4 },
+               1200: {slidesPerView: 5}
 
             }}
          >

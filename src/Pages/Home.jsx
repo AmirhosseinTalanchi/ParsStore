@@ -13,6 +13,7 @@ import NewestProduct from '../components/NewestProduct.jsx'
 import ConsoleBanner from '../components/ConsoleBanner.jsx'
 import HighSaleProduct from '../components/HighSaleProduct.jsx'
 import SliderBanner from '../components/SliderBanner.jsx'
+import WatchSlider from '../components/WatchSlider.jsx';
 
 
 export default function Home() {
@@ -23,6 +24,7 @@ export default function Home() {
    const [category1, setCategory1] = useState([])
    const [consoleBanner, setConsoleBanner] = useState([])
    const [sliderBanner, setSliderBanner] = useState([])
+   
 
 
 
@@ -50,6 +52,8 @@ export default function Home() {
 
    }, [])
 
+
+
    const CloseHandler = () => {
       if (isOpen) {
          setIsOpen(false)
@@ -63,23 +67,28 @@ export default function Home() {
          <div className='w-full container font-iransans overflow-hidden '>
 
             <TopBar setIsOpen={setIsOpen} />
+
             <MobieMenu isOpen={isOpen} onClose={CloseHandler} />
+
             <DeskTopMenu />
+
             <HeaderBaner />
+
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mb-12.5 mt-4 gap-4 '>
                {category1.map((category) => (
                   <Category key={category.id} {...category} />
                ))}
             </div>
-            <NewestProduct {...allProduct} />
+
+            <NewestProduct />
+
             <div className='flex flex-col md:flex-row gap-y-4 md:gap-x-2 lg:gap-x-4 mb-10 '>
                {consoleBanner.map((category) => (
                   <ConsoleBanner key={category.id} {...category} />
                ))}
             </div>
-            <HighSaleProduct {...allProduct} />
 
-
+            <HighSaleProduct/>
 
             <div>
                <Swiper
@@ -95,6 +104,8 @@ export default function Home() {
                   ))}
                </Swiper>
             </div>
+
+            <WatchSlider/>
 
 
          </div>

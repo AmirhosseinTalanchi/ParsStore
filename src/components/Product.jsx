@@ -1,12 +1,19 @@
 import React from 'react'
 
-export default function Pruduct({img,category,score,title,price,discount}) {
+export default function Pruduct({ img, category, score, title, price, discount, img2 }) {
    return (
+
+
+
       <div className='relative flex flex-col border border-zinc-300 p-4 rounded-xl group m-2 z-50 transition-all duration-500 overflow-hidden '>
-         <img src={img} />
+         {img && (
+            <img src={img} />
+         )}
          <div>
             <div className='flex justify-between mb-4'>
-               <span className='text-zinc-500 text-xs'>{category}</span>
+               {category && (
+                  <span className='text-zinc-500 text-xs'>{category}</span>
+               )}
                {score && (
                   <div className='flex items-center gap-1'>
                      <span className='text-zinc-500 text-xs'>{score}</span>
@@ -15,12 +22,16 @@ export default function Pruduct({img,category,score,title,price,discount}) {
                )}
             </div>
             <div className='transition-all duration-500'>
-               <div className='mb-10 mt-5 h-11'>
-                  <h2 className='text-[15px] line-clamp-2'>{title}</h2>
-               </div>
-               <div className='text-left text-sm'>
-                  <span>{price.toLocaleString()} تومان</span>
-               </div>
+               {title && (
+                  <div className='mb-10 mt-5 h-11'>
+                     <h2 className='text-[15px] line-clamp-2'>{title}</h2>
+                  </div>
+               )}
+               {price && (
+                  <div className='text-left text-sm'>
+                     <span>{price.toLocaleString()} تومان</span>
+                  </div>
+               )}
             </div>
             <div className='absolute bottom-4 left-0 right-0 bg-white opacity-0 max-h-0 scale-95 flex flex-col border-t border-zinc-300  px-4 pt-4 items-center transition-all duration-500  pointer-events-none group-hover:opacity-100 group-hover:max-h-60 group-hover:scale-100 group-hover:pointer-events-auto'>
                <button className='px-4 py-3 border border-zinc-300 rounded-xl text-zinc-500 mb-3'>افزودن به سبد خرید</button>
@@ -55,5 +66,8 @@ export default function Pruduct({img,category,score,title,price,discount}) {
             )}
          </div>
       </div>
+
+
+
    )
 }
