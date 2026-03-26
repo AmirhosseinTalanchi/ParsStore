@@ -9,15 +9,15 @@ import { product } from '../../Data.js'
 export default function HighSaleProduct() {
 
    const [allproduct, setAllProduct] = useState(product)
-   const [highSaleProduct, setHighSaleProduct] = useState([])
+  
 
-   useEffect(() => {
-      const HighSale = product.filter((pro) => {
-         return pro.highSale === true
-      })
-      setHighSaleProduct(HighSale)
-
-   }, [])
+   const getPandomItems = (arr, count) => {
+      const shuffled = [...arr].sort(()=> Math.random()-0.5);
+      return shuffled.slice(0,count) 
+      } 
+   
+      const randomItems = getPandomItems(allproduct,7)
+   
 
    return (
       <div className='mb-10'>
@@ -38,7 +38,7 @@ export default function HighSaleProduct() {
 
             }}
          >
-            {highSaleProduct.map((pro) => (
+            {randomItems.map((pro) => (
                <SwiperSlide key={pro.proId}>
                   <Product {...pro} />
                </SwiperSlide>

@@ -8,14 +8,14 @@ import MobieMenu from '../components/MobieMenu'
 import DeskTopMenu from '../components/DeskTopMenu'
 import HeaderBaner from '../components/HeaderBaner'
 import Category from '../components/Category.jsx'
-import { categoryBanner, product } from '../../Data.js'
+import { categoryBanner, product,  } from '../../Data.js'
 import NewestProduct from '../components/NewestProduct.jsx'
 import ConsoleBanner from '../components/ConsoleBanner.jsx'
 import HighSaleProduct from '../components/HighSaleProduct.jsx'
 import SliderBanner from '../components/SliderBanner.jsx'
 import WatchSlider from '../components/WatchSlider.jsx';
 import FooterBanner from '../components/FooterBanner.jsx';
-
+import ArticleSlider from '../components/ArticleSlider.jsx';
 
 export default function Home() {
 
@@ -109,6 +109,10 @@ export default function Home() {
             <WatchSlider/>
 
             <FooterBanner/>
+
+            <ArticleSlider/>   
+
+            
 
          </div>
       </>
