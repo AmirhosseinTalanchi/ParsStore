@@ -23,7 +23,6 @@ export default function WatchSlider() {
 
    }, [])
 
-   console.log(watchSliderProduct)
 
    return (
 
@@ -32,7 +31,7 @@ export default function WatchSlider() {
             <h2>ساعت هوشمند</h2>
          </div>
 
-         <div className='mb-52'>
+         <div className='mb-10'>
 
             <Swiper
                modules={[Navigation]}

@@ -14,6 +14,7 @@ import ConsoleBanner from '../components/ConsoleBanner.jsx'
 import HighSaleProduct from '../components/HighSaleProduct.jsx'
 import SliderBanner from '../components/SliderBanner.jsx'
 import WatchSlider from '../components/WatchSlider.jsx';
+import FooterBanner from '../components/FooterBanner.jsx';
 
 
 export default function Home() {
@@ -107,6 +108,7 @@ export default function Home() {
 
             <WatchSlider/>
 
+            <FooterBanner/>
 
          </div>
       </>

@@ -8,7 +8,8 @@ export  const categoryBanner = [
    {id: 6 ,title: "SonyPlaystation" ,caption: "پلی استیشن 5" , discount: "5%", position:2 , img: "/public/Photo/category-banner/PlayStion-Banner.avif"},
 
    {id: 7 ,title: "مانیتور گیمینگ" ,caption: "بهترین تجربه بازی با مانیتورهای گیمینگ سری ROG" , toptitle: "طراحی چشم نواز" , position:3 ,img: "/public/Photo/category-banner/manitor-Gaming.avif"},
-   {id: 8 ,title: "قطعات کامپیوتر" ,caption: "سیستم گیمینگ رویایی خودتو با تخفیف ویژه ببند" , toptitle: "سیستم رویایی" ,position:3 ,img: "/public/Photo/category-banner/PC-items.avif"}
+   {id: 8 ,title: "قطعات کامپیوتر" ,caption: "سیستم گیمینگ رویایی خودتو با تخفیف ویژه ببند" , toptitle: "سیستم رویایی" ,position:3 ,img: "/public/Photo/category-banner/PC-items.avif"},
+
 ]
 
 
