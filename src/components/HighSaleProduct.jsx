@@ -20,7 +20,8 @@ export default function HighSaleProduct() {
    
 
    return (
-      <div className='mb-10'>
+    <div className="container">
+        <div className='mb-10'>
          {/* top */}
          <div className='flex justify-between text-2xl mb-7 '>
             <h2>محصولات پرفروش​</h2>
@@ -45,5 +46,6 @@ export default function HighSaleProduct() {
             ))}
          </Swiper>
       </div>
+    </div>
    )
 }

@@ -26,31 +26,33 @@ export default function WatchSlider() {
 
    return (
 
-      <div>
-         <div className='flex justify-between text-2xl mb-7 '>
-            <h2>ساعت هوشمند</h2>
-         </div>
+      <div className="container">
+         <div>
+            <div className='flex justify-between text-2xl mb-7 '>
+               <h2>ساعت هوشمند</h2>
+            </div>
 
-         <div className='mb-10'>
+            <div className='mb-10'>
 
-            <Swiper
-               modules={[Navigation]}
-               spaceBetween={2}
-               slidesPerView={2}
-               breakpoints={{
-                  768: { slidesPerView: 3 },
-                  1024: { slidesPerView: 4 },
-                  1200: { slidesPerView: 5 }
+               <Swiper
+                  modules={[Navigation]}
+                  spaceBetween={2}
+                  slidesPerView={2}
+                  breakpoints={{
+                     768: { slidesPerView: 3 },
+                     1024: { slidesPerView: 4 },
+                     1200: { slidesPerView: 5 }
 
-               }}
+                  }}
 
-            >
-               {watchSliderProduct.map((pro) => (
-                  <SwiperSlide key={pro.proId}>
-                     <Product {...pro} />
-                  </SwiperSlide>
-               ))}
-            </Swiper>
+               >
+                  {watchSliderProduct.map((pro) => (
+                     <SwiperSlide key={pro.proId}>
+                        <Product {...pro} />
+                     </SwiperSlide>
+                  ))}
+               </Swiper>
+            </div>
          </div>
       </div>
 

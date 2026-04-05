@@ -8,7 +8,7 @@ import MobieMenu from '../components/MobieMenu'
 import DeskTopMenu from '../components/DeskTopMenu'
 import HeaderBaner from '../components/HeaderBaner'
 import Category from '../components/Category.jsx'
-import { categoryBanner, product,  } from '../../Data.js'
+import { categoryBanner, product, } from '../../Data.js'
 import NewestProduct from '../components/NewestProduct.jsx'
 import ConsoleBanner from '../components/ConsoleBanner.jsx'
 import HighSaleProduct from '../components/HighSaleProduct.jsx'
@@ -16,6 +16,7 @@ import SliderBanner from '../components/SliderBanner.jsx'
 import WatchSlider from '../components/WatchSlider.jsx';
 import FooterBanner from '../components/FooterBanner.jsx';
 import ArticleSlider from '../components/ArticleSlider.jsx';
+import Footer from '../components/Footer.jsx';
 
 export default function Home() {
 
@@ -25,7 +26,7 @@ export default function Home() {
    const [category1, setCategory1] = useState([])
    const [consoleBanner, setConsoleBanner] = useState([])
    const [sliderBanner, setSliderBanner] = useState([])
-   
+
 
 
 
@@ -65,7 +66,7 @@ export default function Home() {
 
    return (
       <>
-         <div className='w-full container font-iransans overflow-hidden '>
+         <div className=' w-full font-iransans overflow-hidden flex justify-center flex-col items-center '>
 
             <TopBar setIsOpen={setIsOpen} />
 
@@ -75,7 +76,7 @@ export default function Home() {
 
             <HeaderBaner />
 
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mb-12.5 mt-4 gap-4 '>
+            <div className='container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mb-12.5 mt-4 gap-4 '>
                {category1.map((category) => (
                   <Category key={category.id} {...category} />
                ))}
@@ -83,20 +84,20 @@ export default function Home() {
 
             <NewestProduct />
 
-            <div className='flex flex-col md:flex-row gap-y-4 md:gap-x-2 lg:gap-x-4 mb-10 '>
+            <div className='container flex flex-col md:flex-row gap-y-4 md:gap-x-2 lg:gap-x-4 mb-10 '>
                {consoleBanner.map((category) => (
                   <ConsoleBanner key={category.id} {...category} />
                ))}
             </div>
 
-            <HighSaleProduct/>
+            <HighSaleProduct />
 
-            <div>
+            <div className='container'>
                <Swiper
                   modules={[Navigation]}
                   spaceBetween={2}
                   slidesPerView={1}
-                  loop = "true"
+                  loop="true"
                >
                   {sliderBanner.map((slider) => (
                      <SwiperSlide>
@@ -106,14 +107,13 @@ export default function Home() {
                </Swiper>
             </div>
 
-            <WatchSlider/>
+            <WatchSlider />
 
-            <FooterBanner/>
+            <FooterBanner />
 
-            <ArticleSlider/>   
+            <ArticleSlider />
 
-            
-
+            <Footer />
          </div>
       </>
 

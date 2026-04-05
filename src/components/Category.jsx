@@ -17,7 +17,6 @@ export default function Category({title,img}) {
           </svg>
         </a>
       </div>
-
     </div>
   )
 }
