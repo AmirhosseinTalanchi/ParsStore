@@ -4,10 +4,6 @@ export default function Footer() {
    return (
 
       <>
-
-
-
-
          <div className='flex flex-col justify-center items-center w-full bg-zinc-900 mt-15'>
             {/* footer top */}
             <div className='container'>
@@ -94,14 +90,7 @@ export default function Footer() {
             </div>
          </div>
 
-
-
       </>
-
-
-
-
-
 
    )
 }

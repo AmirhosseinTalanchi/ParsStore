@@ -24,7 +24,6 @@ export default function Home() {
    const [isOpen, setIsOpen] = useState(false)
    const [allcategory, setAllCategory] = useState(categoryBanner)
    const [category1, setCategory1] = useState([])
-   const [consoleBanner, setConsoleBanner] = useState([])
    const [sliderBanner, setSliderBanner] = useState([])
 
 
@@ -35,14 +34,6 @@ export default function Home() {
          return banner.position === 1
       })
       setCategory1(cat1)
-
-   }, [])
-
-   useEffect(() => {
-      const cat2 = allcategory.filter((banner) => {
-         return banner.position === 2
-      })
-      setConsoleBanner(cat2)
 
    }, [])
 
@@ -84,12 +75,8 @@ export default function Home() {
 
             <NewestProduct />
 
-            <div className='container flex flex-col md:flex-row gap-y-4 md:gap-x-2 lg:gap-x-4 mb-10 '>
-               {consoleBanner.map((category) => (
-                  <ConsoleBanner key={category.id} {...category} />
-               ))}
-            </div>
-
+            <ConsoleBanner/>
+             
             <HighSaleProduct />
 
             <div className='container'>
