@@ -8,6 +8,7 @@ import MobieMenu from '../components/MobieMenu'
 import DeskTopMenu from '../components/DeskTopMenu'
 import HeaderBaner from '../components/HeaderBaner'
 import Category from '../components/Category.jsx'
+import PruductCategoryBanner from '../components/PruductCategoryBanner.jsx'
 import { categoryBanner, product, } from '../../Data.js'
 import NewestProduct from '../components/NewestProduct.jsx'
 import ConsoleBanner from '../components/ConsoleBanner.jsx'
@@ -72,6 +73,8 @@ export default function Home() {
                   <Category key={category.id} {...category} />
                ))}
             </div>
+
+            <PruductCategoryBanner/>
 
             <NewestProduct />
 

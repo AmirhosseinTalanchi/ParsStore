@@ -8,6 +8,19 @@ export  const categoryBanner = [
    {id: 7 ,title: "مانیتور گیمینگ" ,caption: "بهترین تجربه بازی با مانیتورهای گیمینگ سری ROG" , toptitle: "طراحی چشم نواز" , position:3 ,img: "/public/Photo/category-banner/manitor-Gaming.avif"},
    {id: 8 ,title: "قطعات کامپیوتر" ,caption: "سیستم گیمینگ رویایی خودتو با تخفیف ویژه ببند" , toptitle: "سیستم رویایی" ,position:3 ,img: "/public/Photo/category-banner/PC-items.avif"},
 
+   {id: 9  ,img: "/Photo/category-banner/Product-Category-Banner/Mobile-Category-Banner.avif", label: "گوشی موبایل" },
+   {id: 10 ,img: "/Photo/category-banner/Product-Category-Banner/Laptop-Category-Banner.avif", label: "لپتاپ" },
+   {id: 11 ,img: "/Photo/category-banner/Product-Category-Banner/PC-Category-Banner.avif", label: "کامپیتور" },
+   {id: 12 ,img: "/Photo/category-banner/Product-Category-Banner/TV-Category-Banner.avif", label: "تلوزیون" },
+   {id: 13 ,img: "/Photo/category-banner/Product-Category-Banner/Console-Category-Banner.avif", label: "کنسول بازی" },
+   {id: 14 ,img: "/Photo/category-banner/Product-Category-Banner/Watch-Category-Banner.avif", label: "ساعت هوشمند" },
+   {id: 15 ,img: "/Photo/category-banner/Product-Category-Banner/Camera-Category-Banner.avif", label: "دوربین دیجیتال" },
+   {id: 16 ,img: "/Photo/category-banner/Product-Category-Banner/Headphon-Category-Banner.avif", label: "هدفون" },
+   {id: 17 ,img: "/Photo/category-banner/Product-Category-Banner/Mouse-Category-Banner.avif", label: "موس" },
+   {id: 18 ,img: "/Photo/category-banner/Product-Category-Banner/Keybord-Category-Banner.avif", label: "کیبورد" },
+   {id: 19 ,img: "/Photo/category-banner/Product-Category-Banner/CPU-Category-Banner.avif", label: "پردازنده" },
+   {id: 20 ,img: "/Photo/category-banner/Product-Category-Banner/Manitor-Category-Banner.avif", label: "مانیتور" },
+
 ]
 
 
