@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Home from './Pages/Home'
+import ProductsShow from './Pages/ProductsShow'
 
 
 function App() {
@@ -8,7 +9,8 @@ function App() {
   return (
 
     <div  dir='rtl' className='flex justify-center box-border overflow-hidden  '>
-      <Home/>
+      {/* <Home/> */}
+      <ProductsShow/>
     </div>
   )
 }

@@ -1,11 +1,11 @@
 import React from 'react'
 
-export default function Pruduct({ img, category, score, title, price, discount, img2 }) {
+export default function Pruduct({ img, category, score, title, price, discount, img2, proId }) {
    return (
 
 
 
-      <div className='relative flex flex-col border border-zinc-300 p-4 rounded-xl group m-2 z-50 transition-all duration-500 overflow-hidden '>
+      <div className='relative flex flex-col border border-zinc-300 p-4 rounded-xl group m-2 z-50 transition-all duration-500 overflow-hidden hover:scale-104'>
          {img && (
             <img src={img} />
          )}
@@ -64,6 +64,8 @@ export default function Pruduct({ img, category, score, title, price, discount, 
                   <div className=' bg-emerald-600 px-2 py-1  rounded-tl-lg rounded-bl-lg'>تخفیف</div>
                </div>
             )}
+
+            <div>{proId}</div>
          </div>
       </div>
 

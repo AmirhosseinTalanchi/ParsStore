@@ -35,7 +35,7 @@ export default function ProductCategoryBanner() {
          >
             {allProductBanner.map((banner) => (
                <SwiperSlide key={banner.id}>
-                  <a href="#" className='text-center block p-1'>
+                  <a href="src/Pages/ProductsShow.jsx" className='text-center block p-1'>
                      <img src={banner.img}/>
                      <span className='text-xs text-zinc-600'>{banner.label}</span>
                   </a>

@@ -4,7 +4,6 @@ export  const categoryBanner = [
    {id: 3 ,title : "کنسول بازی" , position:1 , img : "/public/Photo/category-banner/game.avif" },
    {id: 4 ,title : "دوربین دیجیتال" , position:1 , img : "/public/Photo/category-banner/camera.avif" },
 
-
    {id: 7 ,title: "مانیتور گیمینگ" ,caption: "بهترین تجربه بازی با مانیتورهای گیمینگ سری ROG" , toptitle: "طراحی چشم نواز" , position:3 ,img: "/public/Photo/category-banner/manitor-Gaming.avif"},
    {id: 8 ,title: "قطعات کامپیوتر" ,caption: "سیستم گیمینگ رویایی خودتو با تخفیف ویژه ببند" , toptitle: "سیستم رویایی" ,position:3 ,img: "/public/Photo/category-banner/PC-items.avif"},
 
@@ -36,27 +35,33 @@ export  const product = [
    {proId:8, category: "موس" ,title: "ماوس تسکو مدل TM295 با سیم ۶ کلید" ,  price:490000 ,img: "/public/Photo/product-img/mouse/mouse-3.avif" },
    {proId:9, category: "موس" ,title: "ماوس ایسوس مدل ROG Strix Impact P303 باسیم"  , price: 2500000 ,img: "/public/Photo/product-img/mouse/mouse-4.avif" }, 
 
-   {proId:9  ,category: "مانیتور" ,title: "مانیتور گیمینگ خمیده ام اس آی MAG 275CQF E18 سایز ۲۷ اینچ WQHD ۱۸۰ هرتز"  , price: 12500000 ,img: "/public/Photo/product-img/manitor/manitor-1.avif" }, 
-   {proId:10 ,category: "مانیتور" ,title: "مانیتور ام اس آی PRO MP275W E2 سایز ۲۷ اینچ IPS با کیفیت Full HD و نرخ تازه‌سازی ۱۲۰ هرتز"  , price: 5800000, discount: 19 ,img: "/public/Photo/product-img/manitor/manitor-2.avif" }, 
-   {proId:11 ,category: "مانیتور" ,title: "مانیتور گیمینگ ام اس آی MAG401QR سایز ۴۰ اینچ UWQHD IPS ۱۵۵ هرتز"  , price: 17500000, discount: 13 ,img: "/public/Photo/product-img/manitor/manitor-3.avif" }, 
-   {proId:12 ,category: "مانیتور" ,title: "مانیتور 27 اینچ ایسوس ROG XG27ACS"  , price: 17500000 ,img: "/public/Photo/product-img/manitor/manitor-4.avif" }, 
+   {proId:10  ,category: "مانیتور" ,title: "مانیتور گیمینگ خمیده ام اس آی MAG 275CQF E18 سایز ۲۷ اینچ WQHD ۱۸۰ هرتز"  , price: 12500000 ,img: "/public/Photo/product-img/manitor/manitor-1.avif" }, 
+   {proId:11 ,category: "مانیتور" ,title: "مانیتور ام اس آی PRO MP275W E2 سایز ۲۷ اینچ IPS با کیفیت Full HD و نرخ تازه‌سازی ۱۲۰ هرتز"  , price: 5800000, discount: 19 ,img: "/public/Photo/product-img/manitor/manitor-2.avif" }, 
+   {proId:12 ,category: "مانیتور" ,title: "مانیتور گیمینگ ام اس آی MAG401QR سایز ۴۰ اینچ UWQHD IPS ۱۵۵ هرتز"  , price: 17500000, discount: 13 ,img: "/public/Photo/product-img/manitor/manitor-3.avif" }, 
+   {proId:13 ,category: "مانیتور" ,title: "مانیتور 27 اینچ ایسوس ROG XG27ACS"  , price: 17500000 ,img: "/public/Photo/product-img/manitor/manitor-4.avif" }, 
    
    {proId:14 ,category: "ساعت هوشمند" ,title: "اپل واچ Ultra 3 مدل 49 میلی متری" ,price: 58000000 ,score: 4.0 ,img: "/public/Photo/product-img/Watch/Watch1.avif" }, 
-   {proId:15 ,category: "ساعت هوشمند" ,title: "ساعت هوشمند اولترا مدل S8 ultra سیم کارت خور" ,price: 3100000 ,highSale: true ,img: "/public/Photo/product-img/Watch/Watch2.avif" }, 
+   {proId:15 ,category: "ساعت هوشمند" ,title: "ساعت هوشمند اولترا مدل S8 ultra سیم کارت خور" ,price: 3100000  ,img: "/public/Photo/product-img/Watch/Watch2.avif" }, 
    {proId:16 ,category: "ساعت هوشمند" ,title: "ساعت هوشمند دی تی نامبر وان مدل Ultra Mate با بدنه استیل و بند فلزی" ,price: 8000000 ,img: "/public/Photo/product-img/Watch/Watch2.avif" }, 
    {proId:17 ,category: "ساعت هوشمند" ,title: "ساعت هوشمند سامسونگ Galaxy Watch8" ,price: 16000000 ,img: "/public/Photo/product-img/Watch/Watch3.avif" },
    {proId:18 ,category: "ساعت هوشمند" ,title: "ساعت هوشمند سامسونگ Galaxy Watch8 سفید" ,price: 1650000, discount:15 ,img: "/public/Photo/product-img/Watch/Watch4.avif" }, 
    {proId:19 ,category: "ساعت هوشمند" ,title: "ساعت هوشمند سامسونگ مدل Galaxy Watch7 L300 40mm" ,price: 12500000, discount:19 ,img: "/public/Photo/product-img/Watch/Watch5.avif" }, 
 
-   {proId:20 ,category: "تلوزیون" ,title: "تلویزیون سامسونگ تلویزیون هوشمند سونی براویا 4 KHDR 2025" ,price:25000000 ,highSale: true ,img: "/public/Photo/product-img/TV/TV1.avif" },
+   {proId:20 ,category: "تلوزیون" ,title: "تلویزیون سامسونگ تلویزیون هوشمند سونی براویا 4 KHDR 2025" ,price:25000000 ,img: "/public/Photo/product-img/TV/TV1.avif" },
 
-   {proId:21 ,category: "کامپیوتر" ,title: "رم کامپیوتر جی اسکیل دو کاناله مدل Trident Z5 RGB فرکانس 6000 مگاهرتز DDR5 تایمینگ CL36 حافظه 64 گیگابایت", price: 24000000 ,highSale: true  ,img: "/public/Photo/product-img/PC/Ram1.avif" }, 
-   {proId:22 ,category: "کامپیوتر" ,title: "رم جی اسکیل مدل Trident Z5 Royal ظرفیت ۳۲ گیگابایت فرکانس ۷۲۰۰ مگاهرتز CL34" ,price:9500000 ,highSale: true ,discount:27 ,img: "/public/Photo/product-img/PC/Ram2.avif" }, 
-   {proId:23 ,category: "کامپیوتر" ,title: "خنک کننده پردازنده اوست مدل GT-AV903 ARGB" , price:1200000 ,highSale: true  ,discount:33  ,img: "/public/Photo/product-img/PC/Fan1.avif" }, 
+   {proId:21 ,category: "کامپیوتر" ,title: "رم کامپیوتر جی اسکیل دو کاناله مدل Trident Z5 RGB فرکانس 6000 مگاهرتز DDR5 تایمینگ CL36 حافظه 64 گیگابایت", price: 24000000  ,img: "/public/Photo/product-img/PC/Ram1.avif" }, 
+   {proId:22 ,category: "کامپیوتر" ,title: "رم جی اسکیل مدل Trident Z5 Royal ظرفیت ۳۲ گیگابایت فرکانس ۷۲۰۰ مگاهرتز CL34" ,price:9500000,discount:27 ,img: "/public/Photo/product-img/PC/Ram2.avif" }, 
+   {proId:23 ,category: "کامپیوتر" ,title: "خنک کننده پردازنده اوست مدل GT-AV903 ARGB" , price:1200000  ,discount:33  ,img: "/public/Photo/product-img/PC/Fan1.avif" }, 
 
-   {proId:24 ,category: "گوشی موبایل" ,title: "گوشی سامسونگ Galaxy Z Fold 7", score : "4.5"  , price:178000000 ,highSale: true ,discount: 19  ,img: "/public/Photo/product-img/Phone/Phone1.avif" }, 
+   {proId:24 ,category: "گوشی موبایل" ,title: "گوشی آیفون 16 | حافظه 256 گیگابایت دو سیم‌کارت نات اکتیو", score : "4.0"  , price:42000000 ,img: "/public/Photo/product-img/Phone/Phone1.avif" }, 
+   {proId:25 ,category: "گوشی موبایل" ,title: "گوشی اپل دو سیم iPhone 14 | حافظه 128 گیگابایت" , price:30000000 ,discount: 14 ,img: "/public/Photo/product-img/Phone/Phone2.avif" }, 
+   {proId:26 ,category: "گوشی موبایل" ,title: "گوشی سامسونگ (ویتنام) S25 Plus 5G | حافظه 512 رم 12 گیگابایت" , price:62000000  ,img: "/public/Photo/product-img/Phone/Phone3.avif" }, 
+   {proId:27 ,category: "گوشی موبایل" ,title: "گوشی سامسونگ A17 4G | حافظه 256 رم 8 گیگابایت" , price:29000000  ,img: "/public/Photo/product-img/Phone/Phone4.avif" }, 
+   {proId:28 ,category: "گوشی موبایل" ,title: "گوشی سامسونگ Galaxy Z Fold 7", score : "4.5"  , price:178000000  ,discount: 19  ,img: "/public/Photo/product-img/Phone/Phone5.avif" }, 
+   {proId:29 ,category: "گوشی موبایل" ,title: "گوشی موبایل اپل مدل iPhone 17 Pro Max" , price:29000000 ,discount: 17  ,img: "/public/Photo/product-img/Phone/Phone6.avif" }, 
 
-   {proId:25 ,category: "کنسول بازی" ,title: "کنسول بازی سونی PS5 Slim Digital + یک دسته اضافه" ,price:26500000, highSale: true ,discount:7  ,img: "/public/Photo/product-img/console/console1.avif" }, 
+   {proId:30 ,category: "کنسول بازی" ,title: "کنسول بازی سونی PS5 Slim Digital + یک دسته اضافه" ,price:26500000 ,discount:7  ,img: "/public/Photo/product-img/console/console1.avif" }, 
+   
 ]
 
 export const Articles = [
