@@ -57,7 +57,7 @@ export default function Footer() {
 
                      <div className='flex flex-col lg:flex-row gap-15'>
                         <div className='flex flex-col gap-3'>
-                           <img src='public/Photo/logo-dark.png' className='w-36 h-6'></img>
+                           <img src='/Photo/logo-dark.png' className='w-36 h-6'></img>
                            <p className='min-w-1'>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطر آن چنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می‌باشد. لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
                         </div>
                         <div className='flex gap-40 min-w-100'>

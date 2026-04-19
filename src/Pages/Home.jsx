@@ -3,9 +3,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation"
-import TopBar from '../components/TopBar'
-import MobieMenu from '../components/MobieMenu'
-import DeskTopMenu from '../components/DeskTopMenu'
 import HeaderBaner from '../components/HeaderBaner'
 import Category from '../components/Category.jsx'
 import PruductCategoryBanner from '../components/PruductCategoryBanner.jsx'
@@ -17,12 +14,10 @@ import SliderBanner from '../components/SliderBanner.jsx'
 import WatchSlider from '../components/WatchSlider.jsx';
 import FooterBanner from '../components/FooterBanner.jsx';
 import ArticleSlider from '../components/ArticleSlider.jsx';
-import Footer from '../components/Footer.jsx';
 
 export default function Home() {
 
    const [allProduct, setAllProduct] = useState(product)
-   const [isOpen, setIsOpen] = useState(false)
    const [allcategory, setAllCategory] = useState(categoryBanner)
    const [category1, setCategory1] = useState([])
    const [sliderBanner, setSliderBanner] = useState([])
@@ -48,23 +43,12 @@ export default function Home() {
 
 
 
-   const CloseHandler = () => {
-      if (isOpen) {
-         setIsOpen(false)
-      }
-   }
 
 
 
    return (
       <>
-         <div className=' w-full font-iransans overflow-hidden flex justify-center flex-col items-center '>
-
-            <TopBar setIsOpen={setIsOpen} />
-
-            <MobieMenu isOpen={isOpen} onClose={CloseHandler} />
-
-            <DeskTopMenu />
+         <div className=' overflow-hidden flex justify-center flex-col items-center '>
 
             <HeaderBaner />
 
@@ -74,12 +58,12 @@ export default function Home() {
                ))}
             </div>
 
-            <PruductCategoryBanner/>
+            <PruductCategoryBanner />
 
             <NewestProduct />
 
-            <ConsoleBanner/>
-             
+            <ConsoleBanner />
+
             <HighSaleProduct />
 
             <div className='container'>
@@ -103,7 +87,7 @@ export default function Home() {
 
             <ArticleSlider />
 
-            <Footer />
+
          </div>
       </>
 

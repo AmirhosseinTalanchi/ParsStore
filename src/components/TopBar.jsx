@@ -3,6 +3,7 @@ import { IoIosSearch } from "react-icons/io";
 import { CgUser } from "react-icons/cg";
 import { BsCart3 } from "react-icons/bs";
 import { FiMenu } from "react-icons/fi";
+import { Link } from 'react-router';
 
 
 
@@ -13,7 +14,9 @@ export default function TopBar({ setIsOpen }) {
         <div className='  flex justify-between items-center  h-24 w-full relative border-b border-zinc-300'>
 
           {/* logo page */}
-          <img src='public/Photo/logo.png' className='w-36 h-6'></img>
+          <Link to="/">
+            <img src='/Photo/logo.png' className='w-36 h-6'></img>
+          </Link>
 
           {/* search box */}
           <div className='hidden lg:flex w-1/2 relative'>

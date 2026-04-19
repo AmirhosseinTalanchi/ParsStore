@@ -1,5 +1,6 @@
 import React from 'react'
 import { FiMenu } from "react-icons/fi";
+import { Link } from 'react-router';
 
 export default function DeskTopMenu() {
    return (
@@ -18,7 +19,7 @@ export default function DeskTopMenu() {
                   <li>تایپوگرافی</li>
                   <li>درباره ما </li>
                   <li>تماس با ما </li>
-                  <li>فروشگاه</li>
+                  <li><Link  to="/Shop/all">فروشگاه</Link></li>
                </ul>
             </div>
             {/* left */}

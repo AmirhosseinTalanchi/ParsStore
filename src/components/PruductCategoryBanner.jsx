@@ -4,6 +4,7 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import { categoryBanner } from '../../Data.js'
+import { Link } from 'react-router';
 
 export default function ProductCategoryBanner() {
 
@@ -35,10 +36,10 @@ export default function ProductCategoryBanner() {
          >
             {allProductBanner.map((banner) => (
                <SwiperSlide key={banner.id}>
-                  <a href="src/Pages/ProductsShow.jsx" className='text-center block p-1'>
+                  <Link to={`/Shop/${banner.categoryE}`} className='text-center block p-1'>
                      <img src={banner.img}/>
                      <span className='text-xs text-zinc-600'>{banner.label}</span>
-                  </a>
+                  </Link>
                </SwiperSlide>
             ))}
          </Swiper>

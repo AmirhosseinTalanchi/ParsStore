@@ -65,7 +65,6 @@ export default function Pruduct({ img, category, score, title, price, discount, 
                </div>
             )}
 
-            <div>{proId}</div>
          </div>
       </div>
 
