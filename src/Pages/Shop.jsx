@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import Product from '../components/Product.jsx';
+import Color from '../components/Color.jsx';
+import OS from '../components/OS.jsx';
+import Manitor from '../components/Manitor.jsx';
+import Popular from '../components/Popular.jsx';
 import { product } from '../../Data.js'
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Grid } from "swiper/modules";
@@ -80,34 +84,26 @@ export default function Shop() {
                {proGat !== "all" &&
                   <Link to={`/Shop/${proGat}`}> » {pageName}</Link>
                }
-
-
-
             </div>
 
             <div className='container flex w-full mt-10'>
                {/* right slide */}
                <div className='w-2/7 lg:w-1/4 flex-col gap-7 hidden md:flex'>
                   {/* pricelimit */}
-                  <div className='h-53 border border-zinc-300 rounded-lg'>
-
+                  <div className='h-53 border border-zinc-300 rounded-lg p-5'>
+                     <div className='border-b border-zinc-200 pb-4 relative'>
+                        <h2 className='text-lg'>محدوده قیمت</h2>
+                        <div className='bg-[#1462cf] w-10 h-1 rounded-xl absolute -bottom-0.5'></div>
+                     </div>
                   </div>
                   {/* color */}
-                  <div className='h-103.5 border border-zinc-300 rounded-lg'>
-
-                  </div>
+                  <Color proGat={proGat}/>
                   {/* os */}
-                  <div className='h-60.5 border border-zinc-300 rounded-lg'>
-
-                  </div>
+                  <OS proGat={proGat}/>
                   {/* manitor */}
-                  <div className='h-43 border border-zinc-300 rounded-lg'>
-
-                  </div>
-                  {/*  */}
-                  <div className='h-53 border border-zinc-300 rounded-lg mb-7'>
-
-                  </div>
+                  <Manitor proGat={proGat}/>
+                  {/* popular */}
+                  <Popular proGat={proGat}/>
                </div>
                {/* left side */}
                <div className=' w-full md:w-5/7 lg:w-3/4 md:mr-10 flex flex-col justify-between '>
