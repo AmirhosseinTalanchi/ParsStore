@@ -4,7 +4,7 @@ export default function OS({ proGat }) {
 
    return (
       <>
-         {proGat === "laptop" || proGat === "PC" ? null : (
+         {proGat === "laptop" || proGat === "PC" || proGat === "camera" || proGat === "headphone" || proGat === "mouse" || proGat === "keybord" || proGat === "cpu" || proGat === "manitor" ? null : (
 
             <div className=' border border-zinc-300 rounded-lg p-5'>
                <div className='border-b border-zinc-200 pb-4 relative '>
@@ -17,23 +17,23 @@ export default function OS({ proGat }) {
                      <>
                         <div className='flex justify-between '>
                            <h3>آی او اس</h3>
-                           <div className='w-5 h-5 rounded-lg pt-0.5 bg-[#1462cf] text-white flex justify-center items-center text-[13px]'>{proGat === "mobile" ? 3 : null}</div>
+                           <div className='w-5 h-5 rounded-lg pt-0.5 bg-[#1462cf] text-white flex justify-center items-center text-[13px]'>3</div>
                         </div>
                      </>
                   ) : null
                   }
 
-                  {proGat === "mobile" || proGat === "all" || proGat === "TV" ? (
+                  {proGat === "mobile" || proGat === "all" || proGat === "TV" || proGat === "watch" ? (
                      <>
                         <div className='flex justify-between '>
                            <h3>اندروید</h3>
-                           <div className='w-5 h-5 rounded-lg pt-0.5 bg-[#1462cf] text-white flex justify-center items-center text-[13px]'>{proGat === "mobile" ? 2 : proGat === "TV" ? 1 : null}</div>
+                           <div className='w-5 h-5 rounded-lg pt-0.5 bg-[#1462cf] text-white flex justify-center items-center text-[13px]'>{proGat === "mobile" ? 2 : proGat === "TV" ? 1 : proGat === "watch" ? 2 : proGat === "all" ? 5 : null}</div>
                         </div>
                      </>
                   ) : null
                   }
 
-                  {proGat === "all" ? (
+                  {proGat === "all" || proGat === "TV" ? (
                      <>
                         <div className='flex justify-between '>
                            <h3>تایزن</h3>
@@ -43,7 +43,7 @@ export default function OS({ proGat }) {
                   ) : null
                   }
 
-                  {proGat === "all" ? (
+                  {proGat === "all" || proGat === "console" ? (
                      <>
                         <div className='flex justify-between '>
                            <h3>ویندوز</h3>

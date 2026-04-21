@@ -78,7 +78,7 @@ export default function Shop() {
       <>
          <div className=' w-full font-iransans overflow-hidden flex justify-center flex-col items-center '>
 
-            <div className='container mt-15'>
+            <div className='container mt-15 text-zinc-600'>
                <Link to="/">خانه</Link>
                <Link to="/Shop/all"> » فروشگاه</Link>
                {proGat !== "all" &&
@@ -88,7 +88,7 @@ export default function Shop() {
 
             <div className='container flex w-full mt-10'>
                {/* right slide */}
-               <div className='w-2/7 lg:w-1/4 flex-col gap-7 hidden md:flex'>
+               <div className='w-2/7 lg:w-1/4 flex-col gap-7 hidden md:flex text-zinc-900'>
                   {/* pricelimit */}
                   <div className='h-53 border border-zinc-300 rounded-lg p-5'>
                      <div className='border-b border-zinc-200 pb-4 relative'>
@@ -110,7 +110,7 @@ export default function Shop() {
                   <div>
                      {/* top */}
                      <div>
-                        <h2 className='text-2xl mb-7'>فروشگاه</h2>
+                        <h2 className='text-2xl mb-7'>{pageName}</h2>
                         <div className='flex flex-col lg:flex-row gap-5 justify-between'>
                            <span className='text-xs text-zinc-500'>
                               نمایش {startIndex + 1}–{endIndex > allProduct.length ? allProduct.length : endIndex} از {allProduct.length} نتیجه

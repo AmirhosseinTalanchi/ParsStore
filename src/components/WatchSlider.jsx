@@ -17,7 +17,7 @@ export default function WatchSlider() {
 
    useEffect(() => {
       const Watch = allProduct.filter((pro) => {
-         return pro.proId > 12 && pro.proId < 20
+         return pro.categoryE === "watch"
       })
       setWatchSliderProduct(Watch)
 
