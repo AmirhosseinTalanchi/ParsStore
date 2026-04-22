@@ -6,7 +6,7 @@ import "swiper/css/navigation"
 import { product } from '../../Data.js'
 import Product from './Product.jsx';
 
-export default function WatchSlider() {
+export default function WatchSlider({onAddToFavorite}) {
 
    const [allProduct, setAllProduct] = useState(product)
    const [watchSliderProduct, setWatchSliderProduct] = useState([])
@@ -48,7 +48,7 @@ export default function WatchSlider() {
                >
                   {watchSliderProduct.map((pro) => (
                      <SwiperSlide key={pro.proId}>
-                        <Product {...pro} />
+                        <Product {...pro} onAddToFavorite={onAddToFavorite} />
                      </SwiperSlide>
                   ))}
                </Swiper>

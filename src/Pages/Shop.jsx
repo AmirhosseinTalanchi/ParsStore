@@ -15,7 +15,7 @@ import { Link, useParams } from 'react-router';
 
 
 
-export default function Shop() {
+export default function Shop({onAddToFavorite}) {
 
    const [allProduct, setAllProduct] = useState(product)
    const [userWantProduct, setUserWantProduct] = useState("پیش فرض")
@@ -128,7 +128,7 @@ export default function Shop() {
                      {/* products */}
                      <div className='mt-5 w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
                         {paginatedProduct.map((pro) => (
-                           <Product key={pro.proId} {...pro} />
+                           <Product key={pro.proId} {...pro} onAddToFavorite={onAddToFavorite} />
                         ))}
                      </div>
                      {/* pagination */}

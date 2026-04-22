@@ -1,6 +1,10 @@
 import React from 'react'
 
-export default function Pruduct({ img, category, score, title, price, discount, img2, proId }) {
+export default function Pruduct({ img, category, score, title, price, discount, img2, proId, onAddToFavorite }) {
+
+
+  
+
    return (
 
 
@@ -41,7 +45,7 @@ export default function Pruduct({ img, category, score, title, price, discount, 
                      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
                      <path d="M21 12c-2.4 4 -5.4 6 -9 6s-6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6s6.6 2 9 6"></path>
                   </svg>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-git-compare">
+                  <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-git-compare">
                      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                      <path d="M6 6m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
                      <path d="M18 18m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
@@ -50,7 +54,7 @@ export default function Pruduct({ img, category, score, title, price, discount, 
                      <path d="M13 18h-5a2 2 0 0 1 -2 -2v-8"></path>
                      <path d="M10 15l3 3l-3 3"></path>
                   </svg>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-shopping-bag-heart">
+                  <svg onClick={()=> onAddToFavorite(proId)} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-shopping-bag-heart">
                      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                      <path d="M11.5 21h-2.926a3 3 0 0 1 -2.965 -2.544l-1.255 -8.152a2 2 0 0 1 1.977 -2.304h11.339a2 2 0 0 1 1.977 2.304c-.057 .368 -.1 .644 -.127 .828"></path>
                      <path d="M9 11v-5a3 3 0 0 1 6 0v5"></path>

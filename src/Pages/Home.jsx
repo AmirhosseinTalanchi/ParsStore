@@ -14,17 +14,16 @@ import SliderBanner from '../components/SliderBanner.jsx'
 import WatchSlider from '../components/WatchSlider.jsx';
 import FooterBanner from '../components/FooterBanner.jsx';
 import ArticleSlider from '../components/ArticleSlider.jsx';
+import Product from '../components/Product.jsx';
 
-export default function Home() {
+export default function Home({onAddToFavorite}) {
 
    const [allProduct, setAllProduct] = useState(product)
    const [allcategory, setAllCategory] = useState(categoryBanner)
    const [category1, setCategory1] = useState([])
    const [sliderBanner, setSliderBanner] = useState([])
 
-
-
-
+ 
    useEffect(() => {
       const cat1 = allcategory.filter((banner) => {
          return banner.position === 1
@@ -48,7 +47,7 @@ export default function Home() {
 
    return (
       <>
-         <div className=' overflow-hidden flex justify-center flex-col items-center '>
+         <div className='flex justify-center flex-col items-center container'>
 
             <HeaderBaner />
 
@@ -60,11 +59,11 @@ export default function Home() {
 
             <PruductCategoryBanner />
 
-            <NewestProduct />
+            <NewestProduct onAddToFavorite={onAddToFavorite} />
 
             <ConsoleBanner />
 
-            <HighSaleProduct />
+            <HighSaleProduct onAddToFavorite={onAddToFavorite} />
 
             <div className='container'>
                <Swiper
@@ -81,12 +80,11 @@ export default function Home() {
                </Swiper>
             </div>
 
-            <WatchSlider />
+            <WatchSlider onAddToFavorite={onAddToFavorite} />
 
             <FooterBanner />
 
             <ArticleSlider />
-
 
          </div>
       </>
