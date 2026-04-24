@@ -1,35 +1,33 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router';
+import { Link, useParams } from 'react-router';
 import Product from '../components/Product.jsx';
 import { useLocation } from 'react-router'; 
 
 
-export default function Favorite({ favoriteProduct, onRemoveToFavorite, onAddToComparison }) {
+export default function Comparison({comparisonProduct, onRemoveTaComparison ,onAddToFavorite}) {
 
   const [paginatedProduct, setPaginatedProduct] = useState([])
   const [currentPage, setCurrentPage] = useState(1)
 
-
   let pageSize = 15
-  let pageCount = Math.ceil(favoriteProduct.length / pageSize)
+  let pageCount = Math.ceil(comparisonProduct.length / pageSize)
   let pageNumber = Array.from(Array(pageCount).keys())
   let endIndex = pageSize * currentPage
   let startIndex = endIndex - pageSize
 
   const location = useLocation(); 
   const currentPath = location.pathname; 
-  
 
   useEffect(() => {
-    let ProductToSee2 = favoriteProduct.slice(startIndex, endIndex)
+    let ProductToSee2 = comparisonProduct.slice(startIndex, endIndex)
     setPaginatedProduct(ProductToSee2)
-  }, [favoriteProduct, currentPage, startIndex, endIndex])
+  }, [comparisonProduct, currentPage, startIndex, endIndex])
 
   let changePage = (newPage) => {
     setCurrentPage(newPage)
     let endIndex = pageSize * currentPage
     let startIndex = endIndex - pageSize
-    let ProductToSee2 = favoriteProduct.slice(startIndex, endIndex)
+    let ProductToSee2 = comparisonProduct.slice(startIndex, endIndex)
     setPaginatedProduct(ProductToSee2)
   }
   let prevPage = () => {
@@ -39,35 +37,33 @@ export default function Favorite({ favoriteProduct, onRemoveToFavorite, onAddToC
     setCurrentPage(currentPage + 1)
   }
 
-
-
-
+ 
 
   return (
     <div className='container flex flex-col justify-center items-start w-full'>
       {/* top */}
       <div className='container mt-15 text-zinc-600 text-[13px]'>
         <Link to="/">خانه</Link>
-        <Link to="/Favorite"> » علاقه مندی ها</Link>
+        <Link to="/Comparison"> » مقایسه محصول</Link>
       </div>
       {/* title */}
-      <h2 className='text-zinc-900 text-3xl mt-10 font-medium'>علاقه مندی ها</h2>
+      <h2 className='text-zinc-900 text-3xl mt-10 font-medium'>مقایسه محصول</h2>
       {/* product */}
-      {favoriteProduct.length > 0 ? (
+      {comparisonProduct.length > 0 ? (
         <div>
           {/* top  and products*/}
           <div>
             <div>
               <div className='flex flex-col lg:flex-row gap-5 justify-between'>
                 <span className='text-xs text-zinc-500 mt-5'>
-                  نمایش {startIndex + 1}–{endIndex > favoriteProduct.length ? favoriteProduct.length : endIndex} از {favoriteProduct.length} نتیجه
+                  نمایش {startIndex + 1}–{endIndex > comparisonProduct.length ? comparisonProduct.length : endIndex} از {comparisonProduct.length} نتیجه
                 </span>
               </div>
             </div>
 
             <div className='mt-5 w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5'>
               {paginatedProduct.map((pro) => (
-                <Product key={pro.proId} {...pro}  currentPath={currentPath} onRemoveToFavorite={onRemoveToFavorite} onAddToComparison={onAddToComparison} />
+                <Product key={pro.proId} {...pro} currentPath={currentPath} onRemoveTaComparison={onRemoveTaComparison} onAddToFavorite={onAddToFavorite} />
               ))}
             </div>
           </div>
@@ -101,7 +97,7 @@ export default function Favorite({ favoriteProduct, onRemoveToFavorite, onAddToC
           </ul>
         </div>
       ) : (
-        <h4 className='text-[15px] text-zinc-900 mt-7'>لیست علاقه مندی های شما خالیست.</h4>
+        <h4 className='text-[15px] text-zinc-900 mt-7'>محصولی برای مقایسه انتخاب نشده.</h4>
       )}
 
 

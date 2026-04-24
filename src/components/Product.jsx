@@ -1,9 +1,10 @@
 import React from 'react'
 
-export default function Pruduct({ img, category, score, title, price, discount, img2, proId, onAddToFavorite }) {
 
 
-  
+export default function Pruduct({ img, category, score, title, price, discount, img2, proId, onAddToFavorite, currentPath, onRemoveToFavorite, onAddToComparison, Comparison, onRemoveTaComparison }) {
+
+
 
    return (
 
@@ -40,26 +41,47 @@ export default function Pruduct({ img, category, score, title, price, discount, 
             <div className='absolute bottom-4 left-0 right-0 bg-white opacity-0 max-h-0 scale-95 flex flex-col border-t border-zinc-300  px-4 pt-4 items-center transition-all duration-500  pointer-events-none group-hover:opacity-100 group-hover:max-h-60 group-hover:scale-100 group-hover:pointer-events-auto'>
                <button className='px-4 py-3 border border-zinc-300 rounded-xl text-zinc-500 mb-3'>افزودن به سبد خرید</button>
                <div className='flex gap-9 text-zinc-500'>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-eye">
-                     <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                     <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
-                     <path d="M21 12c-2.4 4 -5.4 6 -9 6s-6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6s6.6 2 9 6"></path>
-                  </svg>
-                  <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-git-compare">
-                     <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                     <path d="M6 6m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
-                     <path d="M18 18m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
-                     <path d="M11 6h5a2 2 0 0 1 2 2v8"></path>
-                     <path d="M14 9l-3 -3l3 -3"></path>
-                     <path d="M13 18h-5a2 2 0 0 1 -2 -2v-8"></path>
-                     <path d="M10 15l3 3l-3 3"></path>
-                  </svg>
-                  <svg onClick={()=> onAddToFavorite(proId)} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-shopping-bag-heart">
-                     <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                     <path d="M11.5 21h-2.926a3 3 0 0 1 -2.965 -2.544l-1.255 -8.152a2 2 0 0 1 1.977 -2.304h11.339a2 2 0 0 1 1.977 2.304c-.057 .368 -.1 .644 -.127 .828"></path>
-                     <path d="M9 11v-5a3 3 0 0 1 6 0v5"></path>
-                     <path d="M18 22l3.35 -3.284a2.143 2.143 0 0 0 .005 -3.071a2.242 2.242 0 0 0 -3.129 -.006l-.224 .22l-.223 -.22a2.242 2.242 0 0 0 -3.128 -.006a2.143 2.143 0 0 0 -.006 3.071l3.355 3.296z"></path>
-                  </svg>
+                  <div className='cursor-pointer'>
+                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-eye">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
+                        <path d="M21 12c-2.4 4 -5.4 6 -9 6s-6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6s6.6 2 9 6"></path>
+                     </svg>
+                  </div>
+
+
+
+                  {currentPath === "/Comparison" ? (
+                     <div onClick={() => onRemoveTaComparison(proId)} className='w-6 h-6 font-bold text-xl cursor-pointer'>✕</div>
+                  ) : (
+                     <div className='cursor-pointer'>
+                        <svg onClick={() => onAddToComparison(proId)} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-git-compare">
+                           <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                           <path d="M6 6m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
+                           <path d="M18 18m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
+                           <path d="M11 6h5a2 2 0 0 1 2 2v8"></path>
+                           <path d="M14 9l-3 -3l3 -3"></path>
+                           <path d="M13 18h-5a2 2 0 0 1 -2 -2v-8"></path>
+                           <path d="M10 15l3 3l-3 3"></path>
+                        </svg>
+                     </div>
+                  )}
+
+
+
+                  {currentPath === "/Favorite" ? (
+                     <div onClick={() => onRemoveToFavorite(proId)} className='w-6 h-6 font-bold text-xl cursor-pointer'>✕</div>
+                  ) : (
+                     <div className='cursor-pointer'>
+                        <svg className='cursor-pointer' onClick={() => onAddToFavorite(proId)} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-shopping-bag-heart">
+                           <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                           <path d="M11.5 21h-2.926a3 3 0 0 1 -2.965 -2.544l-1.255 -8.152a2 2 0 0 1 1.977 -2.304h11.339a2 2 0 0 1 1.977 2.304c-.057 .368 -.1 .644 -.127 .828"></path>
+                           <path d="M9 11v-5a3 3 0 0 1 6 0v5"></path>
+                           <path d="M18 22l3.35 -3.284a2.143 2.143 0 0 0 .005 -3.071a2.242 2.242 0 0 0 -3.129 -.006l-.224 .22l-.223 -.22a2.242 2.242 0 0 0 -3.128 -.006a2.143 2.143 0 0 0 -.006 3.071l3.355 3.296z"></path>
+                        </svg>
+                     </div>
+                  )
+                  }
                </div>
             </div>
             {discount && (

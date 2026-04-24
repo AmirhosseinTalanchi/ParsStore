@@ -16,7 +16,7 @@ import FooterBanner from '../components/FooterBanner.jsx';
 import ArticleSlider from '../components/ArticleSlider.jsx';
 import Product from '../components/Product.jsx';
 
-export default function Home({onAddToFavorite}) {
+export default function Home({onAddToFavorite, onAddToComparison}) {
 
    const [allProduct, setAllProduct] = useState(product)
    const [allcategory, setAllCategory] = useState(categoryBanner)
@@ -59,11 +59,11 @@ export default function Home({onAddToFavorite}) {
 
             <PruductCategoryBanner />
 
-            <NewestProduct onAddToFavorite={onAddToFavorite} />
+            <NewestProduct onAddToFavorite={onAddToFavorite} onAddToComparison={onAddToComparison}  />
 
             <ConsoleBanner />
 
-            <HighSaleProduct onAddToFavorite={onAddToFavorite} />
+            <HighSaleProduct onAddToFavorite={onAddToFavorite} onAddToComparison={onAddToComparison} />
 
             <div className='container'>
                <Swiper
@@ -80,7 +80,7 @@ export default function Home({onAddToFavorite}) {
                </Swiper>
             </div>
 
-            <WatchSlider onAddToFavorite={onAddToFavorite} />
+            <WatchSlider onAddToFavorite={onAddToFavorite} onAddToComparison={onAddToComparison} />
 
             <FooterBanner />
 

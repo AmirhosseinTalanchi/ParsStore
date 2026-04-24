@@ -15,7 +15,7 @@ import { Link, useParams } from 'react-router';
 
 
 
-export default function Shop({onAddToFavorite}) {
+export default function Shop({ onAddToFavorite ,onAddToComparison }) {
 
    const [allProduct, setAllProduct] = useState(product)
    const [userWantProduct, setUserWantProduct] = useState("پیش فرض")
@@ -97,13 +97,13 @@ export default function Shop({onAddToFavorite}) {
                      </div>
                   </div>
                   {/* color */}
-                  <Color proGat={proGat}/>
+                  <Color proGat={proGat} />
                   {/* os */}
-                  <OS proGat={proGat}/>
+                  <OS proGat={proGat} />
                   {/* manitor */}
-                  <Manitor proGat={proGat}/>
+                  <Manitor proGat={proGat} />
                   {/* popular */}
-                  <Popular proGat={proGat}/>
+                  <Popular proGat={proGat} />
                </div>
                {/* left side */}
                <div className=' w-full md:w-5/7 lg:w-3/4 md:mr-10 flex flex-col justify-between '>
@@ -128,11 +128,11 @@ export default function Shop({onAddToFavorite}) {
                      {/* products */}
                      <div className='mt-5 w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
                         {paginatedProduct.map((pro) => (
-                           <Product key={pro.proId} {...pro} onAddToFavorite={onAddToFavorite} />
+                           <Product key={pro.proId} {...pro} onAddToFavorite={onAddToFavorite} onAddToComparison={onAddToComparison} />
                         ))}
                      </div>
-                     {/* pagination */}
                   </div>
+                  {/* pagination */}
                   <ul className='flex items-center justify-center text-zinc-500 gap-3 mt-7'>
                      <li
                         className={`px-4 py-2 border border-zinc-200 rounded-lg cursor-pointer ${currentPage === 1 ? "hidden" : "block"}`}
