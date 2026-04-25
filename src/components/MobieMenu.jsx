@@ -1,12 +1,12 @@
 import React from 'react'
 
-export default function MobieMenu({isOpen,onClose}) {
+export default function MobieMenu({isOpenMenu,onClose}) {
 
  
    return (
       <>
       {/* mobile menu */}
-      <div className={` ${isOpen ? "Open": "Close"} fixed w-80 h-full z-50 py-4 top-0 bg-white flex flex-col transition-all duration-300 md:hidden`} >
+      <div className={` ${isOpenMenu ? "Open": "Close"} fixed w-80 h-full z-50 py-4 top-0 bg-white flex flex-col transition-all duration-300 lg:hidden`} >
          <div className='w-full border-b border-zinc-300 pb-4'>
             <input type="text" placeholder='جستجو در سایت ...' className='w-72 h-11 mx-4 border border-zinc-300 rounded-xl p-3 ' />
          </div>
@@ -24,7 +24,7 @@ export default function MobieMenu({isOpen,onClose}) {
       </div>
 
       {/* blur bg */}
-      <div className={`hidden absolute z-40 top-0 right-0 left-0 bottom-0 ${isOpen && "inline bg-black/65"}`}onClick={onClose} ></div>
+      <div className={`hidden  z-40 top-0 right-0 left-0 bottom-0 fixed ${isOpenMenu && "inline bg-black/65"}`}onClick={onClose} ></div>
 
       </>
    )

@@ -28,7 +28,7 @@ export default function ProductCategoryBanner() {
 
 
    return (
-      <div className='container mb-20'>
+      <div className='container mb-15'>
       
             <Swiper
                modules={[Navigation]}

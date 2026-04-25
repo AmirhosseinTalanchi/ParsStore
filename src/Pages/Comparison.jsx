@@ -4,7 +4,7 @@ import Product from '../components/Product.jsx';
 import { useLocation } from 'react-router'; 
 
 
-export default function Comparison({comparisonProduct, onRemoveTaComparison ,onAddToFavorite}) {
+export default function Comparison({comparisonProduct, onRemoveTaComparison ,onAddToFavorite, onAddToCart}) {
 
   const [paginatedProduct, setPaginatedProduct] = useState([])
   const [currentPage, setCurrentPage] = useState(1)
@@ -63,7 +63,7 @@ export default function Comparison({comparisonProduct, onRemoveTaComparison ,onA
 
             <div className='mt-5 w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5'>
               {paginatedProduct.map((pro) => (
-                <Product key={pro.proId} {...pro} currentPath={currentPath} onRemoveTaComparison={onRemoveTaComparison} onAddToFavorite={onAddToFavorite} />
+                <Product key={pro.proId} {...pro} currentPath={currentPath} onRemoveTaComparison={onRemoveTaComparison} onAddToFavorite={onAddToFavorite} onAddToCart={onAddToCart}/>
               ))}
             </div>
           </div>

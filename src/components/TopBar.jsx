@@ -7,7 +7,7 @@ import { Link } from 'react-router';
 
 
 
-export default function TopBar({ setIsOpen }) {
+export default function TopBar({ setIsOpenMenu,setIsOpenCart, cartProduct }) {
   return (
     <>
       <div className='container  '>
@@ -32,15 +32,15 @@ export default function TopBar({ setIsOpen }) {
               <span className='hidden lg:block text-zinc-400'>حساب کاربری</span>
             </div>
             {/* cart */}
-            <div className='flex gap-2'>
+            <div className='flex gap-2' onClick={() => setIsOpenCart(prev => ! prev)}>
               <div className='relative'>
                 <BsCart3 className='w-6 h-6' />
-                <div className='w-5 h-5 rounded-[7px] bg-blue-700 text-white justify-center items-center flex absolute bottom-3 right-3 text-sm'>0</div>
+                <div className='w-5 h-5 rounded-[7px] bg-blue-700 text-white justify-center items-center flex absolute bottom-3 right-3 text-sm pt-1'>{cartProduct.length}</div>
               </div>
               <span className='hidden lg:block text-zinc-400'>محصول</span>
             </div>
             {/* menuInMoblie */}
-            <FiMenu className='w-9 h-9 z-10 lg:hidden' onClick={() => setIsOpen(prev => !prev)} />
+            <FiMenu className='w-9 h-9 z-10 lg:hidden' onClick={() => setIsOpenMenu(prev => !prev)} />
           </div>
 
 

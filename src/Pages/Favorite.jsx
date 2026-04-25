@@ -4,7 +4,7 @@ import Product from '../components/Product.jsx';
 import { useLocation } from 'react-router'; 
 
 
-export default function Favorite({ favoriteProduct, onRemoveToFavorite, onAddToComparison }) {
+export default function Favorite({ favoriteProduct, onRemoveToFavorite, onAddToComparison ,onAddToCart }) {
 
   const [paginatedProduct, setPaginatedProduct] = useState([])
   const [currentPage, setCurrentPage] = useState(1)
@@ -67,7 +67,7 @@ export default function Favorite({ favoriteProduct, onRemoveToFavorite, onAddToC
 
             <div className='mt-5 w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5'>
               {paginatedProduct.map((pro) => (
-                <Product key={pro.proId} {...pro}  currentPath={currentPath} onRemoveToFavorite={onRemoveToFavorite} onAddToComparison={onAddToComparison} />
+                <Product key={pro.proId} {...pro}  currentPath={currentPath} onRemoveToFavorite={onRemoveToFavorite} onAddToComparison={onAddToComparison} onAddToCart={onAddToCart}/>
               ))}
             </div>
           </div>

@@ -2,7 +2,7 @@ import React from 'react'
 
 
 
-export default function Pruduct({ img, category, score, title, price, discount, img2, proId, onAddToFavorite, currentPath, onRemoveToFavorite, onAddToComparison, Comparison, onRemoveTaComparison }) {
+export default function Pruduct({ img, category, score, title, price, discount, img2, proId,currentPath, onAddToFavorite , onRemoveToFavorite, onAddToComparison, onRemoveTaComparison, onAddToCart }) {
 
 
 
@@ -39,7 +39,7 @@ export default function Pruduct({ img, category, score, title, price, discount, 
                )}
             </div>
             <div className='absolute bottom-4 left-0 right-0 bg-white opacity-0 max-h-0 scale-95 flex flex-col border-t border-zinc-300  px-4 pt-4 items-center transition-all duration-500  pointer-events-none group-hover:opacity-100 group-hover:max-h-60 group-hover:scale-100 group-hover:pointer-events-auto'>
-               <button className='px-4 py-3 border border-zinc-300 rounded-xl text-zinc-500 mb-3'>افزودن به سبد خرید</button>
+               <button onClick={() => onAddToCart(proId)} className='px-4 py-3 border border-zinc-300 rounded-xl text-zinc-500 mb-3'>افزودن به سبد خرید</button>
                <div className='flex gap-9 text-zinc-500'>
                   <div className='cursor-pointer'>
                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-eye">
@@ -48,9 +48,6 @@ export default function Pruduct({ img, category, score, title, price, discount, 
                         <path d="M21 12c-2.4 4 -5.4 6 -9 6s-6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6s6.6 2 9 6"></path>
                      </svg>
                   </div>
-
-
-
                   {currentPath === "/Comparison" ? (
                      <div onClick={() => onRemoveTaComparison(proId)} className='w-6 h-6 font-bold text-xl cursor-pointer'>✕</div>
                   ) : (
@@ -66,9 +63,6 @@ export default function Pruduct({ img, category, score, title, price, discount, 
                         </svg>
                      </div>
                   )}
-
-
-
                   {currentPath === "/Favorite" ? (
                      <div onClick={() => onRemoveToFavorite(proId)} className='w-6 h-6 font-bold text-xl cursor-pointer'>✕</div>
                   ) : (

@@ -6,7 +6,7 @@ import "swiper/css/navigation"
 import { product } from '../../Data.js'
 import Product from './Product.jsx';
 
-export default function NewestProduct({ onAddToFavorite, onAddToComparison }) {
+export default function NewestProduct({ onAddToFavorite, onAddToComparison, onAddToCart }) {
 
    const [allProduct, setAllProduct] = useState(product)
    const [userSelectProduct, setUserSelectProduct] = useState([])
@@ -53,7 +53,7 @@ export default function NewestProduct({ onAddToFavorite, onAddToComparison }) {
             >
                {userSelectProduct.map((pro) => (
                   <SwiperSlide key={pro.proId}>
-                     <Product {...pro} onAddToFavorite={onAddToFavorite} onAddToComparison={onAddToComparison} />
+                     <Product {...pro} onAddToFavorite={onAddToFavorite} onAddToComparison={onAddToComparison} onAddToCart={onAddToCart} />
                   </SwiperSlide>
                ))}
             </Swiper>
