@@ -90,12 +90,12 @@ export default function Shop({ onAddToFavorite ,onAddToComparison, onAddToCart }
                {/* right slide */}
                <div className='w-2/7 lg:w-1/4 flex-col gap-7 hidden md:flex text-zinc-900'>
                   {/* pricelimit */}
-                  <div className='h-53 border border-zinc-300 rounded-lg p-5'>
+                  {/* <div className='h-53 border border-zinc-300 rounded-lg p-5'>
                      <div className='border-b border-zinc-200 pb-4 relative'>
                         <h2 className='text-lg'>محدوده قیمت</h2>
                         <div className='bg-[#1462cf] w-10 h-1 rounded-xl absolute -bottom-0.5'></div>
                      </div>
-                  </div>
+                  </div> */}
                   {/* color */}
                   <Color proGat={proGat} />
                   {/* os */}
@@ -110,12 +110,12 @@ export default function Shop({ onAddToFavorite ,onAddToComparison, onAddToCart }
                   <div>
                      {/* top */}
                      <div>
-                        <h2 className='text-2xl mb-7'>{pageName}</h2>
+                        <h2 className='text-2xl mb-7'>{proGat === "all" ? "همه محصولات" : pageName}</h2>
                         <div className='flex flex-col lg:flex-row gap-5 justify-between'>
                            <span className='text-xs text-zinc-500'>
                               نمایش {startIndex + 1}–{endIndex > allProduct.length ? allProduct.length : endIndex} از {allProduct.length} نتیجه
                            </span>
-                           <ul className='gap-4 flex text-sm'>
+                           <ul className='gap-4 flex flex-wrap text-sm'>
                               <li className={`cursor-pointer select-none text-zinc-500 pb-1  ${userWantProduct === "پیش فرض" ? "border-b border-[#1462cf] text-zinc-900" : ""}`} onClick={() => { changeCategory("پیش فرض") }}>پیش‌فرض</li>
                               <li className={`cursor-pointer select-none text-zinc-500 pb-1  ${userWantProduct === "پر فروش" ? "border-b border-[#1462cf] text-zinc-900" : ""}`} onClick={() => { changeCategory("پر فروش") }}>پرفروش</li>
                               <li className={`cursor-pointer select-none text-zinc-500 pb-1  ${userWantProduct === "بالاترین امتیاز" ? "border-b border-[#1462cf] text-zinc-900" : ""}`} onClick={() => { changeCategory("بالاترین امتیاز") }}>بالاترین‌امتیاز</li>

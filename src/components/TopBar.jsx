@@ -10,7 +10,7 @@ import { Link } from 'react-router';
 export default function TopBar({ setIsOpenMenu,setIsOpenCart, cartProduct }) {
   return (
     <>
-      <div className='container  '>
+      <div className='container'>
         <div className='  flex justify-between items-center  h-24 w-full relative border-b border-zinc-300'>
 
           {/* logo page */}

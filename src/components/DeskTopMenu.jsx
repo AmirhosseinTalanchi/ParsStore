@@ -1,25 +1,49 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { FiMenu } from "react-icons/fi";
 import { Link } from 'react-router';
+import { categoryBanner } from "../../Data"
+
 
 export default function DeskTopMenu() {
+
+   const [banner, setbanner] = useState(categoryBanner.filter((cat) => {
+      return cat.id > 8
+   }))
+
+
+
+
    return (
       <div className='container'>
-         <div className='hidden lg:flex justify-between h-14 items-center border-b border-zinc-300' >
+         <div className='hidden lg:flex justify-between h-14 items-center border-b border-zinc-300 ' >
             {/* right */}
-            <div className='flex'>
+            <div className='flex '>
                {/* menu */}
-               <div className='flex items-center gap-x-2 pl-6 ml-6 border-l border-zinc-300'>
+               <div className='flex group items-center gap-x-2 pl-6 ml-6 border-l border-zinc-300 relative'>
                   <FiMenu className='w-6 h-6' />
                   <span>دسته بندی محصولات</span>
+                  {/* submenu */}
+                  <div className='bg-white w-65 absolute top-13.5 border border-zinc-200 z-50 hidden group-hover:block'>
+                     <div className='px-2'>
+                        {banner.map((banner) => (
+                           <Link key={banner.id} to={`/Shop/${banner.categoryE}`}>
+                              <div className='flex items-center py-1.25 border-b border-zinc-200' key={banner.id}>
+                                 <img className='w-10 h-10' src={banner.img} alt="" />
+                                 <h3 className='text-sm text-zinc-800'>{banner.label}</h3>
+                              </div>
+                           </Link>
+                        ))}
+                     </div>
+                  </div>
                </div>
+
                {/* list */}
-               <ul className='flex justify-center items-center gap-9'>
-                  <li>خانه</li>
-                  <li>تایپوگرافی</li>
-                  <li>درباره ما </li>
-                  <li>تماس با ما </li>
-                  <li><Link  to="/Shop/all">فروشگاه</Link></li>
+               <ul className='flex justify-center items-center gap-5'>
+                  <li className='hover:border-b-4 border-[#1462cf] pb-3.5 mt-3.5 px-3 transition-all duration-100 cursor-pointer'><Link to="/">خانه</Link></li>
+                  <li className='hover:border-b-4 border-[#1462cf] pb-3.5 mt-3.5 px-3 transition-all duration-100 cursor-pointer'>تایپوگرافی</li>
+                  <li className='hover:border-b-4 border-[#1462cf] pb-3.5 mt-3.5 px-3 transition-all duration-100 cursor-pointer'>درباره ما </li>
+                  <li className='hover:border-b-4 border-[#1462cf] pb-3.5 mt-3.5 px-3 transition-all duration-100 cursor-pointer'>تماس با ما </li>
+                  <li className='hover:border-b-4 border-[#1462cf] pb-3.5 mt-3.5 px-3 transition-all duration-100 cursor-pointer'><Link to="/Shop/all">فروشگاه</Link></li>
                </ul>
             </div>
             {/* left */}
@@ -48,6 +72,7 @@ export default function DeskTopMenu() {
                   <span className=' text-zinc-400'>علاقه مندی</span>
                </Link>
             </div>
+
          </div>
       </div>
    )

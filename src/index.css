@@ -1,15 +1,12 @@
 @import "tailwindcss";
-
 @theme{
    --font-iransans : Iransans 
-}
- 
+} 
 @font-face {
    font-family: Iransans;
    font-style: normal;
    src: url("/public/font/IRANSansX-Medium.ttf") format('truetype');
 }
-
 .Close{
    right: -320px;
 }
@@ -17,39 +14,33 @@
   right: 0;
 }
 
-
-
+@media (max-width: 576px){
+   .container{
+      width: 90%;
+  }
+}
 @media (min-width: 576px){
    .container{
-      width: 100%;
-     
-      
+      max-width: 95%;
   }
 }
 @media (min-width: 768px){
    .container{
       max-width: 95%;
-     
-     
   }
 }
 @media (min-width: 992px){
    .container{
       max-width: 95%;
-     
-    
   }
 }
 @media (min-width: 1200px){
    .container{
-      max-width: 95%;
-     
-    
+      max-width: 95%;    
   }
 }
 @media (min-width: 1400px){
    .container{
       max-width: 1400px;
-    
   }
 }

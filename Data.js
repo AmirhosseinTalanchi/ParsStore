@@ -20,9 +20,7 @@ export  const categoryBanner = [
    {id: 19 ,img: "/Photo/category-banner/Product-Category-Banner/CPU-Category-Banner.avif", label: "پردازنده", categoryE: "cpu" },
    {id: 20 ,img: "/Photo/category-banner/Product-Category-Banner/Manitor-Category-Banner.avif", label: "مانیتور", categoryE: "manitor" },
 
-]
-
-
+]  
 export  const product = [
 
    {proId:1, category: "گوشی موبایل", count:1, categoryE: "mobile", price:42000000, score: "4.0", discount: null, title: "گوشی آیفون 16 | حافظه 256 گیگابایت دو سیم‌کارت نات اکتیو", img: "/public/Photo/product-img/Phone/Phone1.avif" }, 

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 
-export default function CartProduct({ img, title, proId, price, onRemoveTaCart, initialCount = 1, onUpdateQuantity}) {
+export default function CartProduct({ img, title, proId, price, onRemoveTaCart, onUpdateQuantity}) {
 
  
-   const [count, setCount] = useState(initialCount);
-   const [totalPrice, setTotalPrice] = useState(price * initialCount);
+   const [count, setCount] = useState(1);
+   const [totalPrice, setTotalPrice] = useState(price * 1);
 
    useEffect(() => {
       setTotalPrice(price * count);
@@ -32,7 +32,7 @@ export default function CartProduct({ img, title, proId, price, onRemoveTaCart, 
          <img className='w-22 h-22' src={img} alt="" />
          <div className='flex flex-col gap-2 w-full'>
             <h4 className='line-clamp-1 mt-1 text-sm'>{title}</h4>
-            <span className='text-red-600 text-xs'>{totalPrice.toLocaleString()} تومان</span>
+            <span className='text-zinc-900 text-xs'>{totalPrice.toLocaleString()} تومان</span>
             <div className='flex gap-3 items-center'>
                <div className='flex'>
                   <div className='px-2 select-none cursor-pointer border border-zinc-200 flex justify-center items-center rounded-tr-sm rounded-br-sm'onClick={add}>+</div>

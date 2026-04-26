@@ -10,12 +10,14 @@ import ShopingCartMenu from './components/ShopingCartMenu'
 import DeskTopMenu from './components/DeskTopMenu'
 import Footer from './components/Footer.jsx';
 import { categoryBanner, product, } from '../Data.js'
+import toast, { Toaster } from 'react-hot-toast'
 
 function App() {
   const [count, setCount] = useState(0)
   const [isOpenMenu, setIsOpenMenu] = useState(false)
   const [isOpenCart, setIsOpenCart] = useState(false)
   const [allProduct, setAllProduct] = useState(product)
+  const [subMenuIsOpen, setSubMenuIsOpen] = useState(false)
 
   const [favoriteProduct, setFavoriteProduct] = useState(() => {
     const saved = localStorage.getItem("favoriteProduct");
@@ -44,6 +46,7 @@ function App() {
   }, [cartProduct]);
 
 
+
   const location = useLocation();
 
   const CloseHandler = () => {
@@ -53,51 +56,81 @@ function App() {
     if (isOpenCart) {
       setIsOpenCart(false)
     }
+    if(subMenuIsOpen)(
+      setSubMenuIsOpen(false)
+    )
   }
   const addToFavorite = (proId) => {
-    let favorit = allProduct.find((pro) => {
-      return pro.proId === proId
-    })
+    const favorit = allProduct.find((pro) => pro.proId === proId);
     setFavoriteProduct(prevFavoriteProduct => {
-      if (prevFavoriteProduct.some(item => item.proId === favorit.proId)) {
+      const isExist = prevFavoriteProduct.some(item => item.proId === favorit.proId);
+      if (isExist) {
+        toast.error('این محصول قبلاً به لیست علاقه‌مندی‌ها اضافه شده است', {
+          duration: 4000,
+          position: 'top-left'
+        });
         return prevFavoriteProduct;
       }
+      toast.success('محصول به لیست علاقه‌مندی‌ها اضافه شد', {
+        duration: 4000,
+        position: 'top-left'
+      });
       return [...prevFavoriteProduct, favorit];
     });
-  }
+  };
   const removeTaFavorite = (proId) => {
     let newFavorite = favoriteProduct.filter((pro) => {
       return pro.proId !== proId
     })
     setFavoriteProduct(newFavorite)
+    toast.error("محصول از لیست علاقه مندی ها حذف شد", {
+      duration: 4000,
+      position: 'top-left'
+    })
   }
   const addToComparison = (proId) => {
-    let comparison = allProduct.find((pro) => {
-      return pro.proId === proId
-    })
+    const comparison = allProduct.find((pro) => pro.proId === proId);
     setComparisonProduct(prevComparisonProduct => {
-      if (prevComparisonProduct.some(item => item.proId === comparison.proId)) {
+      const isExist = prevComparisonProduct.some(item => item.proId === comparison.proId);
+      if (isExist) {
+        toast.error('این محصول قبلاً به لیست مقایسه اضافه شده است', {
+          duration: 4000,
+          position: 'top-left'
+        });
         return prevComparisonProduct;
       }
+      toast.success('محصول به لیست مقایسه اضافه شد', {
+        duration: 4000,
+        position: 'top-left'
+      });
       return [...prevComparisonProduct, comparison];
     });
-
-
   }
   const removeTaComparison = (proId) => {
     let newComparison = comparisonProduct.filter((pro) => {
       return pro.proId !== proId
     })
     setComparisonProduct(newComparison)
+    toast.error("محصول از لیست مقایسه حذف شد", {
+      duration: 4000,
+      position: 'top-left'
+    })
   }
   const addToCart = (proId) => {
-    let cart = allProduct.find((pro) => {
-      return pro.proId === proId
-    })
+    const cart = allProduct.find((pro) => pro.proId === proId);
     setCartProduct(prevCartProduct => {
-      if (prevCartProduct.some(item => item.proId === cart.proId)) {
+      const isExist = prevCartProduct.some(item => item.proId === cart.proId);
+      if (isExist) {
+        toast.error('این محصول قبلاً به سبد خرید اضافه شده است', {
+          duration: 4000,
+          position: 'top-left'
+        });
         return prevCartProduct;
       }
+      toast.success('محصول به سبد خرید اضافه شد', {
+        duration: 4000,
+        position: 'top-left'
+      });
       return [...prevCartProduct, cart];
     });
 
@@ -108,7 +141,18 @@ function App() {
       return pro.proId !== proId
     })
     setCartProduct(newCart)
+    toast.error(" یک محصول از سبد خرید حذف شد", {
+      duration: 4000,
+      position: 'top-left'
+    })
   }
+  const openSebMenu = () => {
+
+   setSubMenuIsOpen(prevSubMenuIsOpen => !prevSubMenuIsOpen)
+   console.log(subMenuIsOpen)
+  }
+
+
 
 
   useEffect(() => {
@@ -120,22 +164,21 @@ function App() {
     <div dir='rtl' className='flex flex-col items-center justify-center w-full font-iransans box-border'>
 
       <TopBar setIsOpenMenu={setIsOpenMenu} setIsOpenCart={setIsOpenCart} cartProduct={cartProduct} />
-      <MobieMenu isOpenMenu={isOpenMenu} onClose={CloseHandler} />
-      <ShopingCartMenu isOpenCart={isOpenCart} onClose={CloseHandler} cartProduct={cartProduct} CloseHandler={CloseHandler} onRemoveTaCart={removeTaCart} />
       <DeskTopMenu />
-
-
-
+      <ShopingCartMenu isOpenCart={isOpenCart} onClose={CloseHandler} cartProduct={cartProduct} CloseHandler={CloseHandler} onRemoveTaCart={removeTaCart} />
+      <MobieMenu isOpenMenu={isOpenMenu} onClose={CloseHandler} subMenuIsOpen={subMenuIsOpen} onOpenSebMenu={openSebMenu} />
 
 
       <Routes>
-        <Route path='/' element={<Home onAddToFavorite={addToFavorite} onAddToComparison={addToComparison} onAddToCart={addToCart}/>} />
+        <Route path='/' element={<Home onAddToFavorite={addToFavorite} onAddToComparison={addToComparison} onAddToCart={addToCart} />} />
         <Route path='/Shop/:proGat' element={<Shop onAddToFavorite={addToFavorite} onAddToComparison={addToComparison} onAddToCart={addToCart} />} />
         <Route path='/Favorite' element={<Favorite favoriteProduct={favoriteProduct} onRemoveToFavorite={removeTaFavorite} onAddToComparison={addToComparison} onAddToCart={addToCart} />} />
         <Route path='/Comparison' element={<Comparison comparisonProduct={comparisonProduct} onRemoveTaComparison={removeTaComparison} onAddToFavorite={addToFavorite} onAddToCart={addToCart} />} />
       </Routes>
 
       <Footer />
+
+      <Toaster />
 
     </div>
   )
