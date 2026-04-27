@@ -23,7 +23,21 @@ export  const categoryBanner = [
 ]  
 export  const product = [
 
-   {proId:1, category: "گوشی موبایل", count:1, categoryE: "mobile", price:42000000, score: "4.0", discount: null, title: "گوشی آیفون 16 | حافظه 256 گیگابایت دو سیم‌کارت نات اکتیو", img: "/public/Photo/product-img/Phone/Phone1.avif" }, 
+   {proId:1, category: "گوشی موبایل", brand: "اپل", count:1, categoryE: "mobile", price:42000000, score: "4.0", discount: null, title: "گوشی آیفون 16 | حافظه 256 گیگابایت دو سیم‌کارت نات اکتیو", subtitle: "Apple iPhone 16 Dual Sim Not Active 256 GB", caption:"گوشی آیفون 16 با حافظه 256 گیگابایت و پشتیبانی از دو سیم‌کارت نسخه نات اکتیو، تجربه‌ای قدرتمند، روان و با امنیت بالا را با نمایشگر پیشرفته، دوربین حرفه‌ای و عملکرد سریع برای کارهای روزمره و حرفه‌ای ارائه می‌دهد.", img: "/public/Photo/product-img/Phone/Phone1.avif",
+      Strengths: {
+      1: "پردازنده سریع و بهینه",
+      2: "حافظه داخلی 256 گیگابایت",
+      3: "نمایشگر با کیفیت بالا",
+      4: "دوربین‌های پیشرفته",
+      5: "پشتیبانی از دو سیم‌کارت",
+      },
+      weakPoints: {
+      1: "قیمت نسبتاً بالا",
+      2: "نبود درگاه کارت حافظه",
+      3: "شارژر همراه گوشی ارائه نمی‌شود",   
+      }
+
+   }, 
    {proId:2, category: "گوشی موبایل", count:1, categoryE: "mobile", price:30000000, score: null, discount: 14, title: "گوشی اپل دو سیم iPhone 14 | حافظه 128 گیگابایت", img: "/public/Photo/product-img/Phone/Phone2.avif" }, 
    {proId:3, category: "گوشی موبایل", count:1, categoryE: "mobile", price:62000000, score: null, discount: null, title: "گوشی سامسونگ (ویتنام) S25 Plus 5G | حافظه 512 رم 12 گیگابایت", img: "/public/Photo/product-img/Phone/Phone3.avif" }, 
    {proId:4, category: "گوشی موبایل", count:1, categoryE: "mobile", price:29000000, score: null, discount: null, title: "گوشی سامسونگ A17 4G | حافظه 256 رم 8 گیگابایت", img: "/public/Photo/product-img/Phone/Phone4.avif" }, 

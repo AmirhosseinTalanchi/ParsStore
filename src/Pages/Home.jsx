@@ -16,7 +16,7 @@ import FooterBanner from '../components/FooterBanner.jsx';
 import ArticleSlider from '../components/ArticleSlider.jsx';
 import Product from '../components/Product.jsx';
 
-export default function Home({onAddToFavorite, onAddToComparison ,onAddToCart}) {
+export default function Home({onAddToFavorite, onAddToComparison ,onAddToCart,}) {
 
    const [allProduct, setAllProduct] = useState(product)
    const [allcategory, setAllCategory] = useState(categoryBanner)
@@ -39,11 +39,6 @@ export default function Home({onAddToFavorite, onAddToComparison ,onAddToCart}) 
       setSliderBanner(slider)
 
    }, [])
-
-
-
-
-
 
    return (
       <>

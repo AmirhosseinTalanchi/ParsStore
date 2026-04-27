@@ -15,7 +15,7 @@ import { Link, useParams } from 'react-router';
 
 
 
-export default function Shop({ onAddToFavorite ,onAddToComparison, onAddToCart }) {
+export default function Shop({ onAddToFavorite, onAddToComparison, onAddToCart }) {
 
    const [allProduct, setAllProduct] = useState(product)
    const [userWantProduct, setUserWantProduct] = useState("پیش فرض")
@@ -33,6 +33,7 @@ export default function Shop({ onAddToFavorite ,onAddToComparison, onAddToCart }
    let startIndex = endIndex - pageSize
 
 
+ 
 
    useEffect(() => {
       if (proGat && proGat !== "all") {
@@ -78,7 +79,7 @@ export default function Shop({ onAddToFavorite ,onAddToComparison, onAddToCart }
       <>
          <div className=' w-full font-iransans overflow-hidden flex justify-center flex-col items-center '>
 
-            <div className='container mt-15 text-zinc-600'>
+            <div className='container mt-15 text-zinc-600 text-[13px]'>
                <Link to="/">خانه</Link>
                <Link to="/Shop/all"> » فروشگاه</Link>
                {proGat !== "all" &&

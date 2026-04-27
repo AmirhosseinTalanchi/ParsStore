@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router'
 
 export default function Footer() {
    return (
@@ -54,7 +55,6 @@ export default function Footer() {
             <div className='container'>
                <div className=' bg-zinc-800 flex justify-between flex-col pt-10'>
                   <div className='flex  text-zinc-400  bg-zinc-800 gap-7 flex-col xl:flex-row items-center justify-between'>
-
                      <div className='flex flex-col lg:flex-row gap-15'>
                         <div className='flex flex-col gap-3'>
                            <img src='/Photo/logo-dark.png' className='w-36 h-6'></img>
@@ -62,19 +62,19 @@ export default function Footer() {
                         </div>
                         <div className='flex gap-40 min-w-100'>
                            <ul className='flex flex-col gap-3'>
-                              <li>خانه</li>
-                              <li>تایپوگرافی</li>
-                              <li>ابزارک ها</li>
-                              <li>المان ها</li>
-                              <li>درباره ما</li>
-                              <li>تماس با ما</li>
+                              <li className='cursor-pointer'><Link to="/">خانه</Link></li>
+                              <li className='cursor-pointer'><Link to="/Shop/all">فروشگاه</Link></li>
+                              <li className='cursor-pointer'>تایپوگرافی</li>
+                              <li className='cursor-pointer'>المان ها</li>
+                              <li className='cursor-pointer'>درباره ما</li>
+                              <li className='cursor-pointer'>تماس با ما</li>
                            </ul>
                            <ul className='flex flex-col gap-3'>
-                              <li>مقایسه محصول</li>
-                              <li>علاقه مندی ها</li>
-                              <li>راهنمای خرید</li>
-                              <li>راهنمای مرجوعی</li>
-                              <li>شرایط و قوانین</li>
+                              <li className='cursor-pointer'><Link to="/Comparison">مقایسه محصول</Link></li>
+                              <li className='cursor-pointer'><Link to="/Favorite">علاقه مندی ها</Link></li>
+                              <li className='cursor-pointer'>راهنمای خرید</li>
+                              <li className='cursor-pointer'>راهنمای مرجوعی</li>
+                              <li className='cursor-pointer'>شرایط و قوانین</li>
                            </ul>
                         </div>
                      </div>

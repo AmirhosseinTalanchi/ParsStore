@@ -21,7 +21,7 @@ export default function DeskTopMenu() {
                {/* menu */}
                <div className='flex group items-center gap-x-2 pl-6 ml-6 border-l border-zinc-300 relative'>
                   <FiMenu className='w-6 h-6' />
-                  <span>دسته بندی محصولات</span>
+                  <span className='cursor-pointer'>دسته بندی محصولات</span>
                   {/* submenu */}
                   <div className='bg-white w-65 absolute top-13.5 border border-zinc-200 z-50 hidden group-hover:block'>
                      <div className='px-2'>

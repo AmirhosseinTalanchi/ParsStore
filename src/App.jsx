@@ -4,6 +4,7 @@ import Home from './Pages/Home'
 import Shop from './Pages/Shop'
 import Favorite from './Pages/Favorite'
 import Comparison from './Pages/Comparison'
+import ProductInfo from './Pages/ProductInfo'
 import TopBar from './components/TopBar'
 import MobieMenu from './components/MobieMenu'
 import ShopingCartMenu from './components/ShopingCartMenu'
@@ -11,6 +12,7 @@ import DeskTopMenu from './components/DeskTopMenu'
 import Footer from './components/Footer.jsx';
 import { categoryBanner, product, } from '../Data.js'
 import toast, { Toaster } from 'react-hot-toast'
+import { Link } from 'react-router'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -31,8 +33,9 @@ function App() {
     const saved3 = localStorage.getItem("cartProduct");
     return saved3 ? JSON.parse(saved3) : [];
   })
+  const location = useLocation();
 
-
+  
   useEffect(() => {
     localStorage.setItem("favoriteProduct", JSON.stringify(favoriteProduct));
   }, [favoriteProduct]);
@@ -45,9 +48,10 @@ function App() {
     localStorage.setItem("cartProduct", JSON.stringify(cartProduct));
   }, [cartProduct]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location])
 
-
-  const location = useLocation();
 
   const CloseHandler = () => {
     if (isOpenMenu) {
@@ -56,7 +60,7 @@ function App() {
     if (isOpenCart) {
       setIsOpenCart(false)
     }
-    if(subMenuIsOpen)(
+    if (subMenuIsOpen) (
       setSubMenuIsOpen(false)
     )
   }
@@ -147,21 +151,21 @@ function App() {
     })
   }
   const openSebMenu = () => {
-
-   setSubMenuIsOpen(prevSubMenuIsOpen => !prevSubMenuIsOpen)
-   console.log(subMenuIsOpen)
+    setSubMenuIsOpen(prevSubMenuIsOpen => !prevSubMenuIsOpen)
+    console.log(subMenuIsOpen)
   }
+  const getSelectedProductInfo = () => {
+    let selectedProduct = allProduct.filter((pro) => {
+      return pro.proId === 1
+    }, [])
 
-
-
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [location])
+    setProductUserWantSee(selectedProduct)
+  }
 
   return (
 
     <div dir='rtl' className='flex flex-col items-center justify-center w-full font-iransans box-border'>
+
 
       <TopBar setIsOpenMenu={setIsOpenMenu} setIsOpenCart={setIsOpenCart} cartProduct={cartProduct} />
       <DeskTopMenu />
@@ -174,6 +178,7 @@ function App() {
         <Route path='/Shop/:proGat' element={<Shop onAddToFavorite={addToFavorite} onAddToComparison={addToComparison} onAddToCart={addToCart} />} />
         <Route path='/Favorite' element={<Favorite favoriteProduct={favoriteProduct} onRemoveToFavorite={removeTaFavorite} onAddToComparison={addToComparison} onAddToCart={addToCart} />} />
         <Route path='/Comparison' element={<Comparison comparisonProduct={comparisonProduct} onRemoveTaComparison={removeTaComparison} onAddToFavorite={addToFavorite} onAddToCart={addToCart} />} />
+        <Route path='/ProductInfo/:proID' element={<ProductInfo allProduct={allProduct}/>} />
       </Routes>
 
       <Footer />
