@@ -178,7 +178,7 @@ function App() {
         <Route path='/Shop/:proGat' element={<Shop onAddToFavorite={addToFavorite} onAddToComparison={addToComparison} onAddToCart={addToCart} />} />
         <Route path='/Favorite' element={<Favorite favoriteProduct={favoriteProduct} onRemoveToFavorite={removeTaFavorite} onAddToComparison={addToComparison} onAddToCart={addToCart} />} />
         <Route path='/Comparison' element={<Comparison comparisonProduct={comparisonProduct} onRemoveTaComparison={removeTaComparison} onAddToFavorite={addToFavorite} onAddToCart={addToCart} />} />
-        <Route path='/ProductInfo/:proID' element={<ProductInfo allProduct={allProduct}/>} />
+        <Route path='/ProductInfo/:proID' element={<ProductInfo allProduct={allProduct} onAddToFavorite={addToFavorite} onAddToComparison={addToComparison} onAddToCart={addToCart}/>} />
       </Routes>
 
       <Footer />

@@ -1,34 +1,22 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation"
 import Product from './Product.jsx';
-import { product } from '../../Data.js'
 
-export default function HighSaleProduct({ onAddToFavorite, onAddToComparison, onAddToCart }) {
 
-   const [allproduct] = useState(product)
-   const [randomItems, setRandomItems] = useState([])
+export default function RelatedProduct({ relatedProducts, onAddToFavorite, onAddToComparison, onAddToCart }) {
 
-   const getRandomItems = (arr, count) => {
-      const shuffled = [...arr].sort(() => Math.random() - 0.5);
-      return shuffled.slice(0, count)
-   }
-
-   useEffect(() => {
-      const items = getRandomItems(allproduct, 7)
-      setRandomItems(items)
-   }, [allproduct])
 
 
    return (
-      <div className="container">
-         <div className='mb-10'>
+      <div className='container'>
+         <div className='my-15'>
+
             {/* top */}
 
-            <h2>محصولات پرفروش​</h2>
-
+            <h2>محصولات مرتبط</h2>
 
             {/* product */}
             <Swiper
@@ -42,7 +30,7 @@ export default function HighSaleProduct({ onAddToFavorite, onAddToComparison, on
 
                }}
             >
-               {randomItems.map((pro) => (
+               {relatedProducts.map((pro) => (
                   <SwiperSlide key={pro.proId}>
                      <Product {...pro} onAddToFavorite={onAddToFavorite} onAddToComparison={onAddToComparison} onAddToCart={onAddToCart} />
                   </SwiperSlide>
