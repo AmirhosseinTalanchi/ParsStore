@@ -2,18 +2,47 @@ import React, { use, useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router'
 import { product } from '../../Data.js'
 import RelatedProduct from "../components/RelatedProduct.jsx"
+import { register } from 'swiper/element'
 
 
-export default function ProductInfo({ onAddToFavorite, onAddToComparison, onAddToCart}) {
+export default function ProductInfo({ onAddToFavorite, onAddToComparison, onAddToCart }) {
 
    const [allProduct, setAllProduct] = useState(product)
    const [selectedProduct, setSelectedProduct] = useState([])
    const [menuStatus, setMenuStatus] = useState("توضیحات")
-   const [score, setScore] = useState(5)
    const [relatedProducts, setRelatedProducts] = useState([])
+   const [comment, setComment] = useState("")
+   const [userName, setUserName] = useState("")
+   const [email, setEmail] = useState("")
+   const [score, setScore] = useState(5)
 
    const { proID } = useParams()
+   const register = (e) => {
+      e.preventDefault(); // جلوی refresh شدن رو می‌گیره
+      if (!selectedProduct.length) return;
 
+      const currentProID = selectedProduct[0].proId;
+      const newComment = {
+         name: userName,
+         email: email,
+         comment: comment,
+      };
+      setAllProduct((prevProducts) =>
+         prevProducts.map((p) => {
+            // فقط محصولی که proId برابر است را آپدیت کن
+            if (p.proId === currentProID) {
+               return {
+                  ...p,
+                  comment: [...(p.comment || []), newComment],
+               };
+            }
+            return p; // بقیه تغییر نکنن
+         })
+      );
+      setComment("");
+      setUserName("");
+      setEmail("");
+   }
 
    useEffect(() => {
       let productUserWant = allProduct.filter((pro) => {
@@ -25,8 +54,7 @@ export default function ProductInfo({ onAddToFavorite, onAddToComparison, onAddT
    useEffect(() => {
       let cat
       if (selectedProduct.length > 0) {
-            cat = selectedProduct[0].categoryE
-            console.log(cat)
+         cat = selectedProduct[0].categoryE
       }
       let relatedP = allProduct.filter((pro) => {
          return pro.categoryE === cat
@@ -38,24 +66,23 @@ export default function ProductInfo({ onAddToFavorite, onAddToComparison, onAddT
 
    }, [selectedProduct])
 
-
    return (
 
       <>
-         {selectedProduct[0] ? (
+         {selectedProduct.map((pro) => (
             <div className='container flex flex-col justify-start w-full' >
                {/* top */}
                <div div className='container mt-15 text-zinc-600 text-[13px]' >
                   <Link to="/">خانه</Link>
                   <Link to="/Shop/all"> » فروشگاه</Link>
-                  <Link to="/"> » {selectedProduct[0].category}</Link>
-                  <Link to="/"> » {selectedProduct[0].brand}</Link>
-                  <Link to="/"> » {selectedProduct[0].title}</Link>
+                  <Link to="/"> » {pro.category}</Link>
+                  <Link to="/"> » {pro.brand}</Link>
+                  <Link to="/"> » {pro.title}</Link>
                </div >
                {/* productInfo */}
                <div className='flex items-center w-full mt-7'>
                   {/* img */}
-                  <img className='w-105.5 h-105.5 shrink' src={selectedProduct[0].img} alt="" />
+                  <img className='w-105.5 h-105.5 shrink' src={pro.img} alt="" />
                   {/* info */}
                   <div>
                      {/* info top */}
@@ -64,24 +91,24 @@ export default function ProductInfo({ onAddToFavorite, onAddToComparison, onAddT
                         <div className='flex flex-col min-w-150 ml-10 shrink'>
                            <div className='flex justify-between'>
                               <div className='flex gap-7'>
-                                 <div className='bg-[#1462cf] text-white py-0.5 px-2 text-[13px] rounded-lg'>{selectedProduct[0].category}</div>
-                                 <span className='text-[13px] text-zinc-900'>{selectedProduct[0].brand}</span>
+                                 <div className='bg-[#1462cf] text-white py-0.5 px-2 text-[13px] rounded-lg'>{pro.category}</div>
+                                 <span className='text-[13px] text-zinc-900'>{pro.brand}</span>
                               </div>
-                              {selectedProduct[0].score && (
+                              {pro.score && (
                                  <div className='flex items-center gap-1'>
-                                    <span className='text-zinc-500 text-xs'>{selectedProduct[0].score}</span>
+                                    <span className='text-zinc-500 text-xs'>{pro.score}</span>
                                     <svg className='w-3.5 h-3.5' xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="oklch(82.8% .189 84.429)" class="icon icon-tabler icons-tabler-filled icon-tabler-star"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z"></path></svg>
                                  </div>
                               )}
                            </div>
-                           <h2 className='text-2xl text-zinc-900 mt-5 font-medium'>{selectedProduct[0].title}</h2>
-                           <h4 className='text-zinc-500 text-[13px] mt-2.5'>{selectedProduct[0].subtitle}</h4>
-                           <p className='text-zinc-600 text-sm my-7 leading-7'>{selectedProduct[0].caption}</p>
-                           <span className='font-bold text-lg'>{selectedProduct[0].price.toLocaleString()} تومان</span>
+                           <h2 className='text-2xl text-zinc-900 mt-5 font-medium'>{pro.title}</h2>
+                           <h4 className='text-zinc-500 text-[13px] mt-2.5'>{pro.subtitle}</h4>
+                           <p className='text-zinc-600 text-sm my-7 leading-7'>{pro.caption}</p>
+                           <span className='font-bold text-lg'>{pro.price.toLocaleString()} تومان</span>
                            <div className='flex items-center w-full gap-3 mt-7'>
                               <div className='flex text-xs border border-zinc-200 rounded-lg'>
                                  <div className='flex items-center justify-center border-l px-2 border-zinc-200'>-</div>
-                                 <div className='p-4'>{selectedProduct[0].count}</div>
+                                 <div className='p-4'>{pro.count}</div>
                                  <div className='flex items-center justify-center border-r px-2 border-zinc-200'>+</div>
                               </div>
                               <div className='flex justify-center py-4 p-6 bg-emerald-600 text-white rounded-lg w-full'>افزودن به سبد خرید</div>
@@ -120,9 +147,9 @@ export default function ProductInfo({ onAddToFavorite, onAddToComparison, onAddT
                                  </svg>
                                  نقاط قوت
                               </span>
-                              {selectedProduct[0].Strengths && (
+                              {pro.Strengths && (
                                  <ul className='flex flex-col gap-2.5 mt-3 mb-1'>
-                                    {Object.values(selectedProduct[0].Strengths).map((strength, index) => (
+                                    {Object.values(pro.Strengths).map((strength, index) => (
                                        <li className='text-zinc-500 flex items-center gap-2' key={index}>
                                           <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" class="icon icon-tabler icons-tabler-filled icon-tabler-point"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M12 7a5 5 0 1 1 -4.995 5.217l-.005 -.217l.005 -.217a5 5 0 0 1 4.995 -4.783z"></path></svg>
                                           {strength}
@@ -140,9 +167,9 @@ export default function ProductInfo({ onAddToFavorite, onAddToComparison, onAddT
                                  </svg>
                                  نقاط ضعف
                               </span>
-                              {selectedProduct[0].Strengths && (
+                              {pro.Strengths && (
                                  <ul className='flex flex-col gap-2.5 mt-3 mb-1'>
-                                    {Object.values(selectedProduct[0].weakPoints).map((weakPoints, index) => (
+                                    {Object.values(pro.weakPoints).map((weakPoints, index) => (
                                        <li className='text-zinc-500 flex items-center gap-2' key={index}>
                                           <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" class="icon icon-tabler icons-tabler-filled icon-tabler-point"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M12 7a5 5 0 1 1 -4.995 5.217l-.005 -.217l.005 -.217a5 5 0 0 1 4.995 -4.783z"></path></svg>
                                           {weakPoints}
@@ -195,15 +222,15 @@ export default function ProductInfo({ onAddToFavorite, onAddToComparison, onAddT
                   <div className='w-4/5'>
                      {menuStatus === "توضیحات" ? (
                         <p className='text-zinc-900 text-[15px] leading-7 whitespace-pre-line'>
-                           {selectedProduct[0].discription}
+                           {pro.discription}
                         </p>
                      )
                         : menuStatus === "توضیحات تکمیلی" ? (
                            <div>
-                              {selectedProduct[0].property && (
+                              {pro.property && (
                                  <table className='w-full'>
-                                    {Object.values(selectedProduct[0].property).map((property) => (
-                                       <tbody key={property.proId} className='w-full'>
+                                    {Object.values(pro.property).map((property) => (
+                                       <tbody key={property.id} className='w-full'>
                                           <tr className='w-full'>
                                              <td className='py-2.5 px-3 w-1/4 rounded-lg border border-zinc-200 text-[13px] text-zinc-900'>{property.label}</td>
                                              <td className='py-2.5 px-3 w-3/4 rounded-lg border border-zinc-200 text-xs text-zinc-600'>{property.value}</td>
@@ -216,10 +243,22 @@ export default function ProductInfo({ onAddToFavorite, onAddToComparison, onAddT
                         )
                            : menuStatus === "نظرات" ? (
                               <div>
-                                 <div className='w-full border border-zinc-200 rounded-lg text-zinc-700 py-2 px-4'>هنوز بررسی‌ای ثبت نشده است...</div>
+                                 {pro.comment && pro.comment.length > 0 ? (
+                                    pro.comment.map((comment, index) => (
+                                       <div key={index} className='border border-zinc-200 rounded-lg w-full p-5 flex flex-col gap-3'>
+                                          <h3 className='text-sm text-zinc-900 font-bold'>{comment.name}</h3>
+                                          <p className='text-sm text-zinc-700'>{comment.comment}</p>
+                                       </div>
+                                    ))
+                                 ) : (
+                                    <div className='w-full border border-zinc-200 rounded-lg text-zinc-700 py-2 px-4'>
+                                       هنوز بررسی‌ای ثبت نشده است...
+                                    </div>
+                                 )}
+
                                  <div className='mt-6'>
                                     <div className='border-b border-zinc-200 pb-4 relative'>
-                                       <h4 className='text-sm text-zinc-900 font-medium'>اولین کسی باشید که دیدگاهی برای "{selectedProduct[0].title}" می‌نویسد</h4>
+                                       <h4 className='text-sm text-zinc-900 font-medium'>اولین کسی باشید که دیدگاهی برای "{pro.title}" می‌نویسد</h4>
                                        <div className='bg-[#1462cf] w-10 h-1 rounded-xl absolute -bottom-0.5'></div>
                                     </div>
                                     <div className='mt-10 text-zinc-800 flex flex-col gap-2.5'>
@@ -251,20 +290,20 @@ export default function ProductInfo({ onAddToFavorite, onAddToComparison, onAddT
                                        {/* comment */}
                                        <div className='flex flex-col gap-3'>
                                           <label htmlFor='comment' className='text-sm text-zinc-900'>دیدگاه شما <span className='text-rose-400'>*</span></label>
-                                          <textarea name='comment' className='border border-zinc-200 rounded-lg outline-none p-5 text-sm text-zinc-700'></textarea>
+                                          <textarea value={comment} onChange={(event) => setComment(event.target.value)} name='comment' className='border border-zinc-200 rounded-lg outline-none p-5 text-sm text-zinc-700'></textarea>
                                        </div>
                                        {/* name */}
                                        <div className='flex flex-col gap-3'>
                                           <label htmlFor='name' className='text-sm text-zinc-900'>نام <span className='text-rose-400'>*</span></label>
-                                          <input type='text' name='name' className='border border-zinc-200 rounded-lg outline-none p-5 text-sm text-zinc-700'></input>
+                                          <input value={userName} onChange={(event) => setUserName(event.target.value)} type='text' name='name' className='border border-zinc-200 rounded-lg outline-none p-5 text-sm text-zinc-700'></input>
                                        </div>
                                        {/* Email */}
                                        <div className='flex flex-col gap-3'>
                                           <label htmlFor='Email' className='text-sm text-zinc-900'>ایمیل<span className='text-rose-400'>*</span></label>
-                                          <input type='email' name='Email' className='border border-zinc-200 rounded-lg outline-none p-5 text-sm text-zinc-700'></input>
+                                          <input value={email} onChange={(event) => setEmail(event.target.value)} type='text' name='Email' className='border border-zinc-200 rounded-lg outline-none p-5 text-sm text-zinc-700'></input>
                                        </div>
                                        {/* btm */}
-                                       <button className='w-full text-white bg-zinc-800 rounded-lg py-3 px-6'>ثبت</button>
+                                       <button onClick={register} className='w-full text-white bg-zinc-800 rounded-lg py-3 px-6'>ثبت</button>
                                     </form>
                                  </div>
                               </div>
@@ -272,16 +311,10 @@ export default function ProductInfo({ onAddToFavorite, onAddToComparison, onAddT
                   </div>
                </div>
                {/* Related products */}
-               <RelatedProduct relatedProducts={relatedProducts}  onAddToFavorite={onAddToFavorite} onAddToComparison={onAddToComparison} onAddToCart={onAddToCart} />
-
-
-
-
-
+               <RelatedProduct relatedProducts={relatedProducts} onAddToFavorite={onAddToFavorite} onAddToComparison={onAddToComparison} onAddToCart={onAddToCart} />
             </div >
-         ) : (
-            <p>در حال بارگذاری...</p>
-         )}
+
+         ))}
 
       </>
 

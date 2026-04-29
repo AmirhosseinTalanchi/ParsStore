@@ -1,29 +1,7 @@
-export  const categoryBanner = [
-   {id: 1 ,title : "گوشی هوشمند" , position:1 , img : "/public/Photo/category-banner/Phone.avif",categoryE: "mobile"},
-   {id: 2 ,title : "مانیتور طراحی" , position:1 , img : "/public/Photo/category-banner/Design.avif",categoryE: "manitor" },
-   {id: 3 ,title : "کنسول بازی" , position:1 , img : "/public/Photo/category-banner/game.avif",categoryE: "console" },
-   {id: 4 ,title : "دوربین دیجیتال" , position:1 , img : "/public/Photo/category-banner/camera.avif",categoryE: "camera" },
 
-   {id: 7 ,title: "مانیتور گیمینگ", categoryE: "manitor", caption: "بهترین تجربه بازی با مانیتورهای گیمینگ سری ROG" , toptitle: "طراحی چشم نواز" , position:3 ,img: "/public/Photo/category-banner/manitor-Gaming.avif"},
-   {id: 8 ,title: "قطعات کامپیوتر",categoryE: "PC", caption: "سیستم گیمینگ رویایی خودتو با تخفیف ویژه ببند" , toptitle: "سیستم رویایی" ,position:3 ,img: "/public/Photo/category-banner/PC-items.avif"},
-
-   {id: 9  ,img: "/Photo/category-banner/Product-Category-Banner/Mobile-Category-Banner.avif", label: "گوشی موبایل", categoryE: "mobile" },
-   {id: 10 ,img: "/Photo/category-banner/Product-Category-Banner/Laptop-Category-Banner.avif", label: "لپتاپ", categoryE: "laptop" },
-   {id: 11 ,img: "/Photo/category-banner/Product-Category-Banner/PC-Category-Banner.avif", label: "کامپیتور", categoryE: "PC" },
-   {id: 12 ,img: "/Photo/category-banner/Product-Category-Banner/TV-Category-Banner.avif", label: "تلوزیون", categoryE: "TV" },
-   {id: 13 ,img: "/Photo/category-banner/Product-Category-Banner/Console-Category-Banner.avif", label: "کنسول بازی", categoryE: "console" },
-   {id: 14 ,img: "/Photo/category-banner/Product-Category-Banner/Watch-Category-Banner.avif", label: "ساعت هوشمند", categoryE: "watch" },
-   {id: 15 ,img: "/Photo/category-banner/Product-Category-Banner/Camera-Category-Banner.avif", label: "دوربین دیجیتال", categoryE: "camera" },
-   {id: 16 ,img: "/Photo/category-banner/Product-Category-Banner/Headphon-Category-Banner.avif", label: "هدفون", categoryE: "headphone" },
-   {id: 17 ,img: "/Photo/category-banner/Product-Category-Banner/Mouse-Category-Banner.avif", label: "موس", categoryE: "mouse" },
-   {id: 18 ,img: "/Photo/category-banner/Product-Category-Banner/Keybord-Category-Banner.avif", label: "کیبورد", categoryE: "keybord" },
-   {id: 19 ,img: "/Photo/category-banner/Product-Category-Banner/CPU-Category-Banner.avif", label: "پردازنده", categoryE: "cpu" },
-   {id: 20 ,img: "/Photo/category-banner/Product-Category-Banner/Manitor-Category-Banner.avif", label: "مانیتور", categoryE: "manitor" },
-
-]  
 export  const product = [
 
-   {proId:1, category: "گوشی موبایل", brand: "اپل", count:1, categoryE: "mobile", price:42000000, score: "4.0", discount: null, title: "گوشی آیفون 16 | حافظه 256 گیگابایت دو سیم‌کارت نات اکتیو", subtitle: "Apple iPhone 16 Dual Sim Not Active 256 GB", caption:"گوشی آیفون 16 با حافظه 256 گیگابایت و پشتیبانی از دو سیم‌کارت نسخه نات اکتیو، تجربه‌ای قدرتمند، روان و با امنیت بالا را با نمایشگر پیشرفته، دوربین حرفه‌ای و عملکرد سریع برای کارهای روزمره و حرفه‌ای ارائه می‌دهد.", img: "/public/Photo/product-img/Phone/Phone1.avif",
+   {proId:1, category: "گوشی موبایل", categoryE: "mobile", brand: "اپل", count:1, price:42000000, score: "4.0", discount: null, title: "گوشی آیفون 16 | حافظه 256 گیگابایت دو سیم‌کارت نات اکتیو", subtitle: "Apple iPhone 16 Dual Sim Not Active 256 GB", caption:"گوشی آیفون 16 با حافظه 256 گیگابایت و پشتیبانی از دو سیم‌کارت نسخه نات اکتیو، تجربه‌ای قدرتمند، روان و با امنیت بالا را با نمایشگر پیشرفته، دوربین حرفه‌ای و عملکرد سریع برای کارهای روزمره و حرفه‌ای ارائه می‌دهد.", img: "/public/Photo/product-img/Phone/Phone1.avif",
       Strengths: {
       1: "پردازنده سریع و بهینه",
       2: "حافظه داخلی 256 گیگابایت",
@@ -40,25 +18,21 @@ export  const product = [
 
       این گوشی از آخرین نسخه iOS بهره‌مند است و همراه با پردازنده‌ای سریع، مدیریت بهینه انرژی و پشتیبانی نرم‌افزاری طولانی‌مدت تجربه کاربری بسیار خوبی ارائه می‌کند. نمایشگر با کیفیت بالا رنگ‌های زنده، جزئیات دقیق و تجربه بصری عالی برای تماشای ویدئو، بازی و مرور محتوا فراهم می‌کند. دوربین‌های قدرتمند با امکانات پیشرفته عکاسی و فیلم‌برداری در نور کم و شرایط مختلف عملکرد مطلوبی دارند.
 
-      طراحی گوشی با بدنه مقاوم، فریم باریک و استفاده از متریال باکیفیت، استحکام و زیبایی را با هم ترکیب کرده است. همچنین ویژگی‌های امنیتی مانند Face ID و ابزارهای هوشمند iOS باعث می‌شود این گوشی انتخابی مناسب برای کاربران حرفه‌ای و روزمره باشد.`,
-
+      طراحی گوشی با بدنه مقاوم، فریم باریک و استفاده از متریال باکیفیت، استحکام و زیبایی را با هم ترکیب کرده است. همچنین ویژگی‌های امنیتی مانند Face ID و ابزارهای هوشمند iOS باعث می‌شود این گوشی انتخابی مناسب برای کاربران حرفه‌ای و روزمره باشد.`
+      ,
       property: [
-         {proId:1, label: "USB type C", value: "دارد"},
-         {proId:2, label: "اندازه صفحه", value: "6 اینچ"},
-         {proId:3, label: "بلوتوث", value: "دارد، نسخه 5.1"},
-         {proId:4, label: "پردازنده", value: "Apple A19"},
-         {proId:5, label: "تعداد سیم کارت", value: "دو سیم کارت"},
-         {proId:6, label: "جک 3.5 میلیمتری", value: "ندارد"},
-         {proId:7, label: "حافظه داخلی", value: "512 گیگابایت"},
-         {proId:8, label: "دوربین", value: "دارد"},
-         {proId:9, label: "شارژ سریع", value: "دارد"},
-         {proId:10, label: "سیستم عامل", value: "آی او اس"}, 
-      ]
-
+         {id:1, label: "USB type C", value: "دارد"},
+         {id:2, label: "اندازه صفحه", value: "6 اینچ"},
+         {id:3, label: "بلوتوث", value: "دارد، نسخه 5.1"},
+         {id:4, label: "پردازنده", value: "Apple A19"},
+         {id:5, label: "تعداد سیم کارت", value: "دو سیم کارت"},
+         {id:6, label: "جک 3.5 میلیمتری", value: "ندارد"},
+         {id:7, label: "حافظه داخلی", value: "512 گیگابایت"},
+         {id:8, label: "دوربین", value: "دارد"},
+         {id:9, label: "شارژ سریع", value: "دارد"},
+         {id:10, label: "سیستم عامل", value: "آی او اس"}, 
+      ],
    }, 
-
-
-
    {proId:2, category: "گوشی موبایل", count:1, categoryE: "mobile", price:30000000, score: null, discount: 14, title: "گوشی اپل دو سیم iPhone 14 | حافظه 128 گیگابایت", img: "/public/Photo/product-img/Phone/Phone2.avif" }, 
    {proId:3, category: "گوشی موبایل", count:1, categoryE: "mobile", price:62000000, score: null, discount: null, title: "گوشی سامسونگ (ویتنام) S25 Plus 5G | حافظه 512 رم 12 گیگابایت", img: "/public/Photo/product-img/Phone/Phone3.avif" }, 
    {proId:4, category: "گوشی موبایل", count:1, categoryE: "mobile", price:29000000, score: null, discount: null, title: "گوشی سامسونگ A17 4G | حافظه 256 رم 8 گیگابایت", img: "/public/Photo/product-img/Phone/Phone4.avif" }, 
@@ -369,6 +343,29 @@ export const Articles = [
 
   
 ]
+export  const categoryBanner = [
+   {id: 1 ,title : "گوشی هوشمند" , position:1 , img : "/public/Photo/category-banner/Phone.avif",categoryE: "mobile"},
+   {id: 2 ,title : "مانیتور طراحی" , position:1 , img : "/public/Photo/category-banner/Design.avif",categoryE: "manitor" },
+   {id: 3 ,title : "کنسول بازی" , position:1 , img : "/public/Photo/category-banner/game.avif",categoryE: "console" },
+   {id: 4 ,title : "دوربین دیجیتال" , position:1 , img : "/public/Photo/category-banner/camera.avif",categoryE: "camera" },
+
+   {id: 7 ,title: "مانیتور گیمینگ", categoryE: "manitor", caption: "بهترین تجربه بازی با مانیتورهای گیمینگ سری ROG" , toptitle: "طراحی چشم نواز" , position:3 ,img: "/public/Photo/category-banner/manitor-Gaming.avif"},
+   {id: 8 ,title: "قطعات کامپیوتر",categoryE: "PC", caption: "سیستم گیمینگ رویایی خودتو با تخفیف ویژه ببند" , toptitle: "سیستم رویایی" ,position:3 ,img: "/public/Photo/category-banner/PC-items.avif"},
+
+   {id: 9  ,img: "/Photo/category-banner/Product-Category-Banner/Mobile-Category-Banner.avif", label: "گوشی موبایل", categoryE: "mobile" },
+   {id: 10 ,img: "/Photo/category-banner/Product-Category-Banner/Laptop-Category-Banner.avif", label: "لپتاپ", categoryE: "laptop" },
+   {id: 11 ,img: "/Photo/category-banner/Product-Category-Banner/PC-Category-Banner.avif", label: "کامپیتور", categoryE: "PC" },
+   {id: 12 ,img: "/Photo/category-banner/Product-Category-Banner/TV-Category-Banner.avif", label: "تلوزیون", categoryE: "TV" },
+   {id: 13 ,img: "/Photo/category-banner/Product-Category-Banner/Console-Category-Banner.avif", label: "کنسول بازی", categoryE: "console" },
+   {id: 14 ,img: "/Photo/category-banner/Product-Category-Banner/Watch-Category-Banner.avif", label: "ساعت هوشمند", categoryE: "watch" },
+   {id: 15 ,img: "/Photo/category-banner/Product-Category-Banner/Camera-Category-Banner.avif", label: "دوربین دیجیتال", categoryE: "camera" },
+   {id: 16 ,img: "/Photo/category-banner/Product-Category-Banner/Headphon-Category-Banner.avif", label: "هدفون", categoryE: "headphone" },
+   {id: 17 ,img: "/Photo/category-banner/Product-Category-Banner/Mouse-Category-Banner.avif", label: "موس", categoryE: "mouse" },
+   {id: 18 ,img: "/Photo/category-banner/Product-Category-Banner/Keybord-Category-Banner.avif", label: "کیبورد", categoryE: "keybord" },
+   {id: 19 ,img: "/Photo/category-banner/Product-Category-Banner/CPU-Category-Banner.avif", label: "پردازنده", categoryE: "cpu" },
+   {id: 20 ,img: "/Photo/category-banner/Product-Category-Banner/Manitor-Category-Banner.avif", label: "مانیتور", categoryE: "manitor" },
+
+] 
 
 
 
