@@ -58,14 +58,17 @@ export default function Shop({ onAddToFavorite, onAddToComparison, onAddToCart }
       let startIndex = endIndex - pageSize
       let ProductToSee2 = productToShow.slice(startIndex, endIndex)
       setPaginatedProduct(ProductToSee2)
+      window.scrollTo(0, 0);
    }
 
    let prevPage = () => {
       setCurrentPage(currentPage - 1)
+      window.scrollTo(0, 0);
    }
 
    let nextPage = () => {
       setCurrentPage(currentPage + 1)
+      window.scrollTo(0, 0);
    }
 
    let changeCategory = (Category) => {

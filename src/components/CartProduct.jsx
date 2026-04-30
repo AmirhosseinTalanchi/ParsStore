@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 
-export default function CartProduct({ img, title, proId, price, onRemoveTaCart, onUpdateQuantity}) {
+export default function CartProduct({ img, title, proId, price, initialCount, onRemoveTaCart, onUpdateQuantity}) {
 
  
-   const [count, setCount] = useState(1);
+   const [count, setCount] = useState(initialCount);
    const [totalPrice, setTotalPrice] = useState(price * 1);
 
    useEffect(() => {
@@ -25,6 +25,8 @@ export default function CartProduct({ img, title, proId, price, onRemoveTaCart, 
           
       }
   };
+
+
 
 
    return (

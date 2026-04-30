@@ -18,6 +18,9 @@ export default function ShopingCartMenu({ isOpenCart, onClose, cartProduct, Clos
       setCart(updatedCart);
    };
 
+
+
+
    
   useEffect(()=> {
       setCart(cartProduct)
@@ -30,6 +33,8 @@ export default function ShopingCartMenu({ isOpenCart, onClose, cartProduct, Clos
       setTotalCartPrice(sum);
   }, [cart]); // این useEffect هر بار که سبد خرید (cart) تغییر می‌کند، اجرا می‌شود
 
+
+  console.log(cart)
 
    return (
       <>

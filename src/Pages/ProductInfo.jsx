@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router'
 import { product } from '../../Data.js'
 import RelatedProduct from "../components/RelatedProduct.jsx"
 import { register } from 'swiper/element'
+import toast, { Toaster } from 'react-hot-toast'
 
 
 export default function ProductInfo({ onAddToFavorite, onAddToComparison, onAddToCart }) {
@@ -14,34 +15,77 @@ export default function ProductInfo({ onAddToFavorite, onAddToComparison, onAddT
    const [comment, setComment] = useState("")
    const [userName, setUserName] = useState("")
    const [email, setEmail] = useState("")
-   const [score, setScore] = useState(5)
+   const [score, setScore] = useState(0)
+   const [count, setCount] = useState(1)
 
    const { proID } = useParams()
+
    const register = (e) => {
       e.preventDefault(); // جلوی refresh شدن رو می‌گیره
       if (!selectedProduct.length) return;
-
-      const currentProID = selectedProduct[0].proId;
-      const newComment = {
-         name: userName,
-         email: email,
-         comment: comment,
-      };
-      setAllProduct((prevProducts) =>
-         prevProducts.map((p) => {
-            // فقط محصولی که proId برابر است را آپدیت کن
-            if (p.proId === currentProID) {
-               return {
-                  ...p,
-                  comment: [...(p.comment || []), newComment],
-               };
-            }
-            return p; // بقیه تغییر نکنن
+      if (score <= 0) {
+         toast.error("لطفا یک امتیاز ثبت کنید", {
+            duration: 4000,
+            position: 'top-left'
          })
-      );
-      setComment("");
-      setUserName("");
-      setEmail("");
+      }
+      else if (comment === "") {
+         toast.error("لطفا نظر خود را وارد کنید", {
+            duration: 4000,
+            position: 'top-left'
+         })
+      }
+      else if (userName === "" || userName === Number) {
+         toast.error("لطفا نام خود را به صورت صحیح وارد کنید", {
+            duration: 4000,
+            position: 'top-left'
+         })
+      }
+      else if (email === "") {
+         toast.error("لطفا ایمیل خود را وارد کنید", {
+            duration: 4000,
+            position: 'top-left'
+         })
+      }
+      else {
+         const currentProID = selectedProduct[0].proId;
+         const newComment = {
+            name: userName,
+            email: email,
+            comment: comment,
+            score: score
+         };
+         setAllProduct((prevProducts) =>
+            prevProducts.map((p) => {
+               if (p.proId === currentProID) {
+                  return {
+                     ...p,
+                     comment: [...(p.comment || []), newComment],
+                  };
+               }
+               return p;
+            })
+         );
+         setComment("");
+         setUserName("");
+         setEmail("");
+         toast.success("نظر شما با موفقیت ثبت شد", {
+            duration: 4000,
+            position: 'top-left'
+         })
+      }
+
+
+
+   }
+
+   const addCount = () => {
+      setCount(prevCount => prevCount + 1);
+   }
+   const minusCount = () => {
+      if(count > 1){
+         setCount(prevCount => prevCount - 1);
+      }
    }
 
    useEffect(() => {
@@ -70,14 +114,14 @@ export default function ProductInfo({ onAddToFavorite, onAddToComparison, onAddT
 
       <>
          {selectedProduct.map((pro) => (
-            <div className='container flex flex-col justify-start w-full' >
+            <div key={pro.proId} className='container flex flex-col justify-start w-full' >
                {/* top */}
                <div div className='container mt-15 text-zinc-600 text-[13px]' >
                   <Link to="/">خانه</Link>
                   <Link to="/Shop/all"> » فروشگاه</Link>
-                  <Link to="/"> » {pro.category}</Link>
-                  <Link to="/"> » {pro.brand}</Link>
-                  <Link to="/"> » {pro.title}</Link>
+                  <Link to={`/Shop/${pro.categoryE}`}> » {pro.category}</Link>
+                  <Link > » {pro.brand}</Link>
+                  <Link to={`/ProductInfo/${pro.proId}`}> » {pro.title}</Link>
                </div >
                {/* productInfo */}
                <div className='flex items-center w-full mt-7'>
@@ -107,18 +151,18 @@ export default function ProductInfo({ onAddToFavorite, onAddToComparison, onAddT
                            <span className='font-bold text-lg'>{pro.price.toLocaleString()} تومان</span>
                            <div className='flex items-center w-full gap-3 mt-7'>
                               <div className='flex text-xs border border-zinc-200 rounded-lg'>
-                                 <div className='flex items-center justify-center border-l px-2 border-zinc-200'>-</div>
-                                 <div className='p-4'>{pro.count}</div>
-                                 <div className='flex items-center justify-center border-r px-2 border-zinc-200'>+</div>
+                                 <div className='flex text-lg cursor-pointer select-none items-center justify-center border-l px-2 border-zinc-200' onClick={minusCount}>-</div>
+                                 <div className='p-4 text-lg'>{count}</div>
+                                 <div className='flex text-lg cursor-pointer select-none items-center justify-center border-r px-2 border-zinc-200' onClick={addCount}>+</div>
                               </div>
-                              <div className='flex justify-center py-4 p-6 bg-emerald-600 text-white rounded-lg w-full'>افزودن به سبد خرید</div>
+                              <div onClick={() => onAddToCart(pro.proId,count)} className='flex justify-center py-4 p-6 bg-emerald-600 text-white rounded-lg w-full'>افزودن به سبد خرید</div>
                            </div>
                         </div>
                         {/* left */}
                         <div className='w-full flex flex-col gap-3'>
                            <div className='flex w-full gap-2'>
-                              <div className='w-full flex items-center gap-2 border text-xs border-zinc-200 rounded-lg px-3 py-2.5'>
-                                 <svg onClick={() => onAddToComparison(proId)} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c3d7f2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-git-compare">
+                              <div onClick={() => onAddToComparison(pro.proId)} className='w-full flex items-center cursor-pointer gap-2 border text-xs border-zinc-200 rounded-lg px-3 py-2.5'>
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c3d7f2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-git-compare">
                                     <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                     <path d="M6 6m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
                                     <path d="M18 18m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
@@ -129,8 +173,8 @@ export default function ProductInfo({ onAddToFavorite, onAddToComparison, onAddT
                                  </svg>
                                  <span>مقایسه</span>
                               </div>
-                              <div className='w-full flex items-center gap-2 border text-xs border-zinc-200 rounded-lg px-3 py-2.5'>
-                                 <svg className='cursor-pointer' onClick={() => onAddToFavorite(proId)} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-shopping-bag-heart">
+                              <div onClick={() => onAddToFavorite(pro.proId)} className='w-full flex items-center cursor-pointer gap-2 border text-xs border-zinc-200 rounded-lg px-3 py-2.5'>
+                                 <svg className='cursor-pointer' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-shopping-bag-heart">
                                     <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                     <path d="M11.5 21h-2.926a3 3 0 0 1 -2.965 -2.544l-1.255 -8.152a2 2 0 0 1 1.977 -2.304h11.339a2 2 0 0 1 1.977 2.304c-.057 .368 -.1 .644 -.127 .828"></path>
                                     <path d="M9 11v-5a3 3 0 0 1 6 0v5"></path>
@@ -246,6 +290,10 @@ export default function ProductInfo({ onAddToFavorite, onAddToComparison, onAddT
                                  {pro.comment && pro.comment.length > 0 ? (
                                     pro.comment.map((comment, index) => (
                                        <div key={index} className='border border-zinc-200 rounded-lg w-full p-5 flex flex-col gap-3'>
+                                          <div className='bg-[#1462cf] w-14 rounded-lg py-1 flex items-center justify-center text-white gap-1'>
+                                             {comment.score}.0
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="oklch(82.8% .189 84.429)" class="icon icon-tabler icons-tabler-filled icon-tabler-star"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z"></path></svg>
+                                          </div>
                                           <h3 className='text-sm text-zinc-900 font-bold'>{comment.name}</h3>
                                           <p className='text-sm text-zinc-700'>{comment.comment}</p>
                                        </div>
@@ -270,21 +318,11 @@ export default function ProductInfo({ onAddToFavorite, onAddToComparison, onAddT
                                        <div className='flex gap-3'>
                                           <label className='font-bold text-sm text-zinc-900'>امتیاز شما <span className='text-rose-400'>*</span></label>
                                           <div className='flex gap-0.5'>
-                                             <div className="text-[#c3d7f2]">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="icon icon-tabler icons-tabler-filled icon-tabler-star"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z"></path></svg>
-                                             </div>
-                                             <div className="text-[#c3d7f2]">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="icon icon-tabler icons-tabler-filled icon-tabler-star"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z"></path></svg>
-                                             </div>
-                                             <div className="text-[#c3d7f2]">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="icon icon-tabler icons-tabler-filled icon-tabler-star"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z"></path></svg>
-                                             </div>
-                                             <div className="text-[#c3d7f2]">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="icon icon-tabler icons-tabler-filled icon-tabler-star"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z"></path></svg>
-                                             </div>
-                                             <div className="text-[#c3d7f2]">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="icon icon-tabler icons-tabler-filled icon-tabler-star"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z"></path></svg>
-                                             </div>
+                                             <svg onClick={() => setScore(1)} xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill={score > 0 ? "#4169e1" : "#c3d7f2"} class="icon icon-tabler icons-tabler-filled icon-tabler-star"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z"></path></svg>
+                                             <svg onClick={() => setScore(2)} xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill={score > 1 ? "#4169e1" : "#c3d7f2"} class="icon icon-tabler icons-tabler-filled icon-tabler-star"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z"></path></svg>
+                                             <svg onClick={() => setScore(3)} xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill={score > 2 ? "#4169e1" : "#c3d7f2"} class="icon icon-tabler icons-tabler-filled icon-tabler-star"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z"></path></svg>
+                                             <svg onClick={() => setScore(4)} xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill={score > 3 ? "#4169e1" : "#c3d7f2"} class="icon icon-tabler icons-tabler-filled icon-tabler-star"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z"></path></svg>
+                                             <svg onClick={() => setScore(5)} xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill={score > 4 ? "#4169e1" : "#c3d7f2"} class="icon icon-tabler icons-tabler-filled icon-tabler-star"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z"></path></svg>
                                           </div>
                                        </div>
                                        {/* comment */}
@@ -312,6 +350,7 @@ export default function ProductInfo({ onAddToFavorite, onAddToComparison, onAddT
                </div>
                {/* Related products */}
                <RelatedProduct relatedProducts={relatedProducts} onAddToFavorite={onAddToFavorite} onAddToComparison={onAddToComparison} onAddToCart={onAddToCart} />
+               <Toaster />
             </div >
 
          ))}

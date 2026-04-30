@@ -120,8 +120,9 @@ function App() {
       position: 'top-left'
     })
   }
-  const addToCart = (proId) => {
+  const addToCart = (proId, count) => {
     const cart = allProduct.find((pro) => pro.proId === proId);
+
     setCartProduct(prevCartProduct => {
       const isExist = prevCartProduct.some(item => item.proId === cart.proId);
       if (isExist) {
@@ -135,7 +136,7 @@ function App() {
         duration: 4000,
         position: 'top-left'
       });
-      return [...prevCartProduct, cart];
+      return [...prevCartProduct, {...cart,count}];
     });
 
 
