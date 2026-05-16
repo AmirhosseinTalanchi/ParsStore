@@ -5,8 +5,6 @@ export default function ShopingCartMenu({ isOpenCart, onClose, cartProduct, Clos
 
    const [cart, setCart] = useState(cartProduct);
    const [totalCartPrice, setTotalCartPrice] = useState(0);
-   
- 
 
    const updateQuantity = (proId, newCount) => {
       const updatedCart = cart.map(item => {
@@ -17,10 +15,6 @@ export default function ShopingCartMenu({ isOpenCart, onClose, cartProduct, Clos
       });
       setCart(updatedCart);
    };
-
-
-
-
    
   useEffect(()=> {
       setCart(cartProduct)

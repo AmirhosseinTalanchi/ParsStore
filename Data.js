@@ -1023,35 +1023,34 @@ Galaxy Watch8 همچنین امکانات هوشمند متعددی را ارا�
    }, 
 
 
-
-   {proId:1, category: "گوشی موبایل", categoryE: "mobile", brand: "اپل", count:1, price:42000000, score: "4.0", discount: null, title: "گوشی آیفون 16 | حافظه 256 گیگابایت دو سیم‌کارت نات اکتیو",   subtitle: "", caption:"", img: "/public/Photo/product-img/Phone/Phone1.avif",
-      Strengths: {
-      1: "",
-      2: "",
-      3: "",
-      4: "",
-      5: "",
-      },
-      weakPoints: {
-      1: "",
-      2: "",
-      3: "",   
-      },
-      discription: ``,
+   // {proId:1, category: "گوشی موبایل", categoryE: "mobile", brand: "اپل", count:1, price:42000000, score: "4.0", discount: null, title: "گوشی آیفون 16 | حافظه 256 گیگابایت دو سیم‌کارت نات اکتیو",   subtitle: "", caption:"", img: "/public/Photo/product-img/Phone/Phone1.avif",
+   //    Strengths: {
+   //    1: "",
+   //    2: "",
+   //    3: "",
+   //    4: "",
+   //    5: "",
+   //    },
+   //    weakPoints: {
+   //    1: "",
+   //    2: "",
+   //    3: "",   
+   //    },
+   //    discription: ``,
       
-      property: [
-         {id:1, label: "", value: ""},
-         {id:2, label: "", value: ""},
-         {id:3, label: "", value: ""},
-         {id:4, label: "", value: ""},
-         {id:5, label: "", value: ""},
-         {id:6, label: "", value: ""},
-         {id:7, label: "", value: ""},
-         {id:8, label: "", value: ""},
-         {id:9, label: "", value: ""},
-         {id:10, label: "", value: ""}, 
-      ],
-   },
+   //    property: [
+   //       {id:1, label: "", value: ""},
+   //       {id:2, label: "", value: ""},
+   //       {id:3, label: "", value: ""},
+   //       {id:4, label: "", value: ""},
+   //       {id:5, label: "", value: ""},
+   //       {id:6, label: "", value: ""},
+   //       {id:7, label: "", value: ""},
+   //       {id:8, label: "", value: ""},
+   //       {id:9, label: "", value: ""},
+   //       {id:10, label: "", value: ""}, 
+   //    ],
+   // },
 
    {proId:37, category: "دوربین دیجیتال", count:1, categoryE: "camera", price: 95000000, score: null, discount: 14, title: "دوربین بدون آینه سونی Alpha a7 IV با سنسور BSI CMOS و رزولوشن ۳۳ مگاپیکسل", img:"/public/Photo/product-img/camera/camera1.avif"},
    {proId:38, category: "دوربین دیجیتال", count:1, categoryE: "camera", price: 33000000, score: null, discount: null, title: "دوربین بدون آینه کانن EOS R50 + لنز 18-45 میلیمتری", img:"/public/Photo/product-img/camera/camera2.avif"},

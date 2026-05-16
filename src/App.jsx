@@ -15,7 +15,7 @@ import toast, { Toaster } from 'react-hot-toast'
 import { Link } from 'react-router'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(1)
   const [isOpenMenu, setIsOpenMenu] = useState(false)
   const [isOpenCart, setIsOpenCart] = useState(false)
   const [allProduct, setAllProduct] = useState(product)
@@ -70,7 +70,7 @@ function App() {
       const isExist = prevFavoriteProduct.some(item => item.proId === favorit.proId);
       if (isExist) {
         toast.error('این محصول قبلاً به لیست علاقه‌مندی‌ها اضافه شده است', {
-          duration: 4000,
+          duration: 2000,
           position: 'top-left'
         });
         return prevFavoriteProduct;

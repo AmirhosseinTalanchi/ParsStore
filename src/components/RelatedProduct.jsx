@@ -12,7 +12,7 @@ export default function RelatedProduct({ relatedProducts, onAddToFavorite, onAdd
 
    return (
       <div className='container'>
-         <div className='my-15'>
+         <div className='mt-15 mb-7'>
 
             {/* top */}
 

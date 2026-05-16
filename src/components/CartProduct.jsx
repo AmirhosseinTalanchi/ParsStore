@@ -2,22 +2,22 @@ import React, { useEffect, useState } from 'react'
 
 export default function CartProduct({ img, title, proId, price, initialCount, onRemoveTaCart, onUpdateQuantity}) {
 
- 
+
    const [count, setCount] = useState(initialCount);
    const [totalPrice, setTotalPrice] = useState(price * 1);
 
    useEffect(() => {
-      setTotalPrice(price * count);
+      setTotalPrice(price * initialCount);
    }, [count, price]);
 
    const add = () => {
-      const newCount = count + 1;
+      const newCount = initialCount + 1;
       setCount(newCount);
       onUpdateQuantity(proId, newCount);
    };
    const mi = () => {
       if (count > 1) {
-          const newCount = count - 1;
+          const newCount = initialCount - 1;
           setCount(newCount);
           onUpdateQuantity(proId, newCount);
       } else {

@@ -117,7 +117,7 @@ export default function Shop({ onAddToFavorite, onAddToComparison, onAddToCart }
                         <h2 className='text-2xl mb-7'>{proGat === "all" ? "همه محصولات" : pageName}</h2>
                         <div className='flex flex-col lg:flex-row gap-5 justify-between'>
                            <span className='text-xs text-zinc-500'>
-                              نمایش {startIndex + 1}–{endIndex > allProduct.length ? allProduct.length : endIndex} از {allProduct.length} نتیجه
+                              نمایش {startIndex + 1}–{endIndex > productToShow.length ? productToShow.length : endIndex} از {productToShow.length} نتیجه
                            </span>
                            <ul className='gap-4 flex flex-wrap text-sm'>
                               <li className={`cursor-pointer select-none text-zinc-500 pb-1  ${userWantProduct === "پیش فرض" ? "border-b border-[#1462cf] text-zinc-900" : ""}`} onClick={() => { changeCategory("پیش فرض") }}>پیش‌فرض</li>
