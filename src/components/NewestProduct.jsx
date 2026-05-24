@@ -30,7 +30,7 @@ export default function NewestProduct({ onAddToFavorite, onAddToComparison, onAd
          <div className='mb-14'>
 
             {/* top */}
-            <div className='flex justify-between text-2xl mb-7 '>
+            <div className='flex justify-between text-2xl mb-7'>
                <h2>جدیدترین محصولات</h2>
                <ul className='gap-4 flex text-sm'>
                   <li className={`cursor-pointer select-none  ${userWantProduct === "هدفون" ? "border-b border-[#1462cf]" : ""}`} onClick={() => { changeCategory("هدفون") }}>هدفون</li>

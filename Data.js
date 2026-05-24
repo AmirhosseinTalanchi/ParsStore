@@ -1,5 +1,5 @@
 
-export  const product = [
+export const product = [
 
    {proId:1, category: "گوشی موبایل", categoryE: "mobile", brand: "اپل", count:1, price:42000000, score: "4.0", discount: null, title: "گوشی آیفون 16 | حافظه 256 گیگابایت دو سیم‌کارت نات اکتیو", subtitle: "Apple iPhone 16 Dual Sim Not Active 256 GB", caption:"گوشی آیفون 16 با حافظه 256 گیگابایت و پشتیبانی از دو سیم‌کارت نسخه نات اکتیو، تجربه‌ای قدرتمند، روان و با امنیت بالا را با نمایشگر پیشرفته، دوربین حرفه‌ای و عملکرد سریع برای کارهای روزمره و حرفه‌ای ارائه می‌دهد.", img: "/public/Photo/product-img/Phone/Phone1.avif",
       Strengths: {

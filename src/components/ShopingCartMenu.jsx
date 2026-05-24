@@ -43,7 +43,7 @@ export default function ShopingCartMenu({ isOpenCart, onClose, cartProduct, Clos
                {/* product */}
                <div className='h-150 overflow-y-auto'>
                   {cart.map((pro) => (
-                     <CartProduct key={pro.proId} {...pro} initialCount={pro.count} onRemoveTaCart={onRemoveTaCart} onUpdateQuantity={updateQuantity} />
+                    <CartProduct key={pro.proId} {...pro} initialCount={pro.count} onRemoveTaCart={onRemoveTaCart} onUpdateQuantity={updateQuantity} />
                   ))}
                </div>
             </div>
